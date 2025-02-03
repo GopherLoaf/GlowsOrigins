@@ -1,0 +1,85 @@
+{
+  "type": "origins:conditioned_attribute",
+  "modifiers": [
+    {
+      "name": "Armor limiter",
+      "attribute": "minecraft:generic.armor",
+      "operation": "multiply_total",
+      "value": -0.9
+    },
+    {
+      "name": "Armor toughness limiter",
+      "attribute": "minecraft:generic.armor_toughness",
+      "operation": "multiply_total",
+      "value": -0.9
+    },
+    {
+      "name": "Attack damage limiter",
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "multiply_total",
+      "value": -0.9
+    },
+    {
+      "name": "Attack knockback limiter",
+      "attribute": "minecraft:generic.attack_knockback",
+      "operation": "multiply_total",
+      "value": -0.9
+    },
+    {
+      "name": "Attack speed limiter",
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "multiply_total",
+      "value": -0.9
+    },
+    {
+      "name": "Flying speed limiter",
+      "attribute": "minecraft:generic.flying_speed",
+      "operation": "multiply_total",
+      "value": -0.9
+    },
+    {
+      "name": "Follow range limiter",
+      "attribute": "minecraft:generic.follow_range",
+      "operation": "multiply_total",
+      "value": -0.9
+    },
+    {
+      "name": "Knockback resistance limiter",
+      "attribute": "minecraft:generic.knockback_resistance",
+      "operation": "multiply_total",
+      "value": -0.9
+    },
+    {
+      "name": "Luck limiter",
+      "attribute": "minecraft:generic.luck",
+      "operation": "multiply_total",
+      "value": -0.9
+    },
+    {
+      "name": "Max absorption limiter",
+      "attribute": "minecraft:generic.max_absorption",
+      "operation": "multiply_total",
+      "value": -0.9
+    },
+    {
+      "name": "Max health limiter",
+      "attribute": "minecraft:generic.max_health",
+      "operation": "multiply_total",
+      "value": -0.9
+    },
+    {
+      "name": "Movement speed limiter",
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "multiply_total",
+      "value": -0.9
+    }
+  ],
+  "tick_rate": 20,
+  "condition": {
+    "type": "origins:resource",
+    "resource": "perfect:limiters",
+    "comparison": ">",
+    "compare_to": 4
+  },
+  "hidden": true
+}

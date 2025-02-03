@@ -1,0 +1,22 @@
+{
+	"powers": [
+		"sliced:sliced",
+		"sliced:5_break_speed",
+		"sliced:10_break_speed",
+		"sliced:15_break_speed",
+		"sliced:20_break_speed",
+		"sliced:5_damage",
+		"sliced:10_damage",
+		"sliced:15_damage",
+		"sliced:20_damage",
+		"sliced:respawn"
+	],
+	"icon": {
+		"item": "minecraft:iron_sword"
+	},
+	"order": 1,
+	"impact": 3,
+	"name": "Sliced",
+	"description": "Sliced.",
+	"unchoosable": true
+}

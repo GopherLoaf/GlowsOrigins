@@ -1,0 +1,25 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:modify_resource",
+        "modifier": {
+          "operation": "add_base_early",
+          "value": -1
+        },
+        "resource": "perfect:limiters"
+      },
+      {
+        "type": "origins:play_sound",
+        "sound": "minecraft:block.chain.hit"
+      }
+    ]
+  },
+  "hud_render": {
+    "should_render": false
+  },
+  "name": "Limit Break",
+  "description": "You can choose to break a limiter, with your primary key, if you need to."
+}

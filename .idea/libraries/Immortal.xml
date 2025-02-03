@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Immortal">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Immortal.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

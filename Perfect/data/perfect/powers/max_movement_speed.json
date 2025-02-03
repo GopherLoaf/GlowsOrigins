@@ -1,0 +1,9 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Movement speed to max movement speed",
+    "attribute": "minecraft:generic.movement_speed",
+    "value": 1.0239,
+    "operation": "addition"
+  }
+}

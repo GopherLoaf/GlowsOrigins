@@ -1,0 +1,20 @@
+{
+	"powers": [
+		"perfect:max_attributes",
+		"perfect:limiters",
+		"perfect:limiter_regeneration",
+		"perfect:limit_break",
+		"perfect:attribute_limiter",
+		"perfect:attribute_limiter_1",
+		"perfect:attribute_limiter_2",
+		"perfect:attribute_limiter_3",
+		"perfect:attribute_limiter_4"
+	],
+	"icon": {
+		"item": "minecraft:player_head"
+	},
+	"impact": 1,
+	"name": "Perfectus",
+	"description": "A perfect being.",
+	"unchoosable": true
+}

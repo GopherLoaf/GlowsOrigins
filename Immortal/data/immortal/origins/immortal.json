@@ -1,0 +1,17 @@
+{
+	"powers": [
+		"immortal:immortality",
+		"immortal:immunity",
+		"immortal:injury_regeneration",
+		"immortal:keep_inventory",
+		"immortal:self_sustaining",
+		"immortal:void_rejection"
+	],
+	"icon": {
+		"item": "minecraft:totem_of_undying"
+	},
+	"impact": 1,
+	"name": "Immortal",
+	"description": "An Immortal",
+	"unchoosable": true
+}

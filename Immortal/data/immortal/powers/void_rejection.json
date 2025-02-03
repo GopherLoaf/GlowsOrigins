@@ -1,0 +1,24 @@
+{
+	"type": "origins:action_when_damage_taken",
+	"entity_action": {
+		"type": "origins:if_else",
+		"condition": {
+			"type": "origins:dimension",
+			"dimension": "minecraft:overworld"
+		},
+		"if_action": {
+			"type": "origins:execute_command",
+			"command": "tp @s 0 0 0"
+		},
+		"else_action": {
+			"type": "origins:execute_command",
+			"command": "execute in overworld run tp @s ~ ~ ~"
+		}
+	},
+	"damage_condition": {
+		"type": "origins:in_tag",
+		"tag": "minecraft:bypasses_invulnerability"
+	},
+	"name": "Incompatibility",
+	"description": "Your soul and the void will violently reject each other causing you to teleport to the Overworld, if in another dimension, or to the origin of the world, if already in the Overworld."
+}

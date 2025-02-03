@@ -1,0 +1,23 @@
+{
+  "type": "origins:action_over_time",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:modify_resource",
+        "modifier": {
+          "operation": "add_base_early",
+          "value": 3
+        },
+        "resource": "perfect:limiters"
+      },
+      {
+        "type": "origins:play_sound",
+        "sound": "minecraft:block.glass.place"
+      }
+    ]
+  },
+  "interval": 4800,
+  "name": "Limiter Regeneration",
+  "description": "One limiter will regenerate every fifth of a day."
+}

@@ -1,0 +1,9 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Luck to max luck",
+    "attribute": "minecraft:generic.luck",
+    "value": 1024,
+    "operation": "addition"
+  }
+}

@@ -1,0 +1,14 @@
+{
+	"type": "origins:modify_damage_dealt",
+	"condition": {
+		"type": "origins:health",
+		"comparison": "<",
+		"compare_to": 20
+	},
+	"modifier": {
+		"operation": "addition",
+		"value": 1
+	},
+	"name": "Strength of Will",
+	"description": "The lower your health the more damage you deal and faster you dig."
+}

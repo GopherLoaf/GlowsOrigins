@@ -1,0 +1,11 @@
+{
+	"type": "origins:effect_immunity",
+	"effects": [
+		"minecraft:hunger",
+		"minecraft:poison",
+		"minecraft:nausea",
+		"minecraft:wither"
+	],
+	"name": "Immunity",
+	"description": "You are immune to natural diseases and illnesses as well as the process of aging. This means you are immune to hunger, nausea, poison, and withering."
+}

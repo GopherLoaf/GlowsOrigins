@@ -1,0 +1,193 @@
+{
+	"type": "origins:prevent_death",
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:clear_effect"
+			},
+			{
+				"type": "origins:if_else_list",
+				"actions": [
+					{
+						"condition": {
+							"type": "origins:food_level",
+							"comparison": "==",
+							"compare_to": 0
+						},
+						"action": {
+							"type": "origins:and",
+							"actions": [
+								{
+									"type": "origins:apply_effect",
+									"effects": [
+										{
+											"effect": "minecraft:weakness",
+											"duration": 4800,
+											"is_ambient": false,
+											"show_particles": false,
+											"show_icon": false,
+											"amplifier": 2
+										},
+										{
+											"effect": "minecraft:slowness",
+											"duration": 4800,
+											"is_ambient": false,
+											"show_particles": false,
+											"show_icon": false,
+											"amplifier": 2
+										},
+										{
+											"effect": "minecraft:mining_fatigue",
+											"duration": 1800,
+											"is_ambient": false,
+											"show_particles": false,
+											"show_icon": false,
+											"amplifier": 1
+										},
+										{
+											"effect": "minecraft:blindness",
+											"duration": 400,
+											"is_ambient": false,
+											"show_particles": false,
+											"show_icon": false
+										}
+									]
+								},
+								{
+									"type": "origins:drop_inventory",
+									"throw_randomly": true
+								}
+							]
+						}
+					},
+					{
+						"condition": {
+							"type": "origins:food_level",
+							"comparison": "<",
+							"compare_to": 6
+						},
+						"action": {
+							"type": "origins:and",
+							"actions": [
+								{
+									"type": "origins:apply_effect",
+									"effects": [
+										{
+											"effect": "minecraft:weakness",
+											"duration": 1800,
+											"is_ambient": false,
+											"show_particles": false,
+											"show_icon": false,
+											"amplifier": 1
+										},
+										{
+											"effect": "minecraft:slowness",
+											"duration": 1800,
+											"is_ambient": false,
+											"show_particles": false,
+											"show_icon": false,
+											"amplifier": 1
+										},
+										{
+											"effect": "minecraft:mining_fatigue",
+											"duration": 400,
+											"is_ambient": false,
+											"show_particles": false,
+											"show_icon": false
+										},
+										{
+											"effect": "minecraft:blindness",
+											"duration": 220,
+											"is_ambient": false,
+											"show_particles": false,
+											"show_icon": false
+										}
+									]
+								},
+								{
+									"type": "origins:drop_inventory",
+									"throw_randomly": true,
+									"slots": [
+										"weapon.offhand",
+										"hotbar.0",
+										"hotbar.1",
+										"hotbar.2",
+										"hotbar.3",
+										"hotbar.4",
+										"hotbar.5",
+										"hotbar.6",
+										"hotbar.7",
+										"hotbar.8",
+										"armor.chest",
+										"armor.feet",
+										"armor.head",
+										"armor.legs"
+									]
+								}
+							]
+						}
+					},
+					{
+						"condition": {
+							"type": "origins:constant",
+							"value": true
+						},
+						"action": {
+							"type": "origins:and",
+							"actions": [
+								{
+									"type": "origins:apply_effect",
+									"effects": [
+										{
+											"effect": "minecraft:weakness",
+											"duration": 140,
+											"is_ambient": false,
+											"show_particles": false,
+											"show_icon": false
+										},
+										{
+											"effect": "minecraft:slowness",
+											"duration": 140,
+											"is_ambient": false,
+											"show_particles": false,
+											"show_icon": false
+										}
+									]
+								},
+								{
+									"type": "origins:drop_inventory",
+									"throw_randomly": true,
+									"slots": [
+										"weapon.offhand",
+										"weapon.mainhand"
+									]
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"type": "origins:exhaust",
+				"amount": 24
+			},
+			{
+				"type": "origins:apply_effect",
+				"effect": {
+					"effect": "minecraft:instant_health",
+					"is_ambient": false,
+					"show_particles": false,
+					"show_icon": false,
+					"amplifier": 28,
+					"duration": 1
+				}
+			},
+			{
+				"type": "origins:dismount"
+			}
+		]
+	},
+	"name": "Immortality",
+	"description": "You are immortal. Upon death you will be completely restored however this process will be exhausting. You will also drop items in your inventory depending on your exhaustion."
+}

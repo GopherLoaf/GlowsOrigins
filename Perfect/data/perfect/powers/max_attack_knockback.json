@@ -1,0 +1,9 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Attack knockback to max attack knockback",
+    "attribute": "minecraft:generic.attack_knockback",
+    "value": 5,
+    "operation": "addition"
+  }
+}

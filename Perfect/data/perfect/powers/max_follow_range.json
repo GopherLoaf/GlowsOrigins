@@ -1,0 +1,9 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Follow range to max follow range",
+    "attribute": "minecraft:generic.follow_range",
+    "value": 2032,
+    "operation": "addition"
+  }
+}
