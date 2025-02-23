@@ -1,0 +1,56 @@
+{
+
+  "type": "origins:multiple",
+
+  "fangs": {
+    "type": "origins:cooldown",
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 22
+    }
+  },
+
+  "vexes": {
+    "type": "origins:cooldown",
+    "cooldown": 340,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+      "bar_index": 5
+    }
+  },
+
+  "wololo": {
+    "type": "origins:cooldown",
+    "cooldown": 140,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+      "bar_index": 24
+    }
+  },
+
+  "mirror": {
+    "type": "origins:cooldown",
+    "cooldown": 340,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+      "bar_index": 12
+    }
+  },
+
+  "blindness": {
+    "type": "origins:cooldown",
+    "cooldown": 180,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+      "bar_index": 10
+    }
+  },
+  "hidden": true
+
+}

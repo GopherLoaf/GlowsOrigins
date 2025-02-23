@@ -1,0 +1,6 @@
+{
+  "type": "origins:entity_group",
+  "group": "illager",
+  "name": "Ill-Willing Biology",
+  "description": "Your body has a similar enough constitution to illagers such that it will be affected by things that target illagers the same way an illager would be. Illagers also consider you one of them and will not attack you. This does not extend to non-illager allies of the illager (witches, ravagers, vexes, etc)."
+}

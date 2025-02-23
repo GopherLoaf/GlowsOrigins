@@ -1,0 +1,16 @@
+{
+  "type": "origins:action_on_item_use",
+  "entity_action": {
+    "type": "origins:apply_effect",
+    "effect": {
+      "effect": "minecraft:bad_omen",
+      "duration": 100
+    }
+  },
+  "item_condition": {
+    "type": "origins:nbt",
+    "nbt": "{instrument:\"minecraft:seek_goat_horn\"}"
+  },
+  "name": "Raid Caller",
+  "description": "You are able to call for a raid on a village by blowing a seek goat horn for the duration of its cooldown."
+}

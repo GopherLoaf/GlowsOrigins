@@ -1,0 +1,212 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:if_else_list",
+    "actions": [
+      {
+        "condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:resource",
+              "resource": "illman:spell_cooldown_wololo",
+              "comparison": "==",
+              "compare_to": 0
+            },
+            {
+              "type": "origins:sneaking"
+            },
+            {
+              "type": "origins:raycast",
+              "distance": 16,
+              "block": false,
+              "entity": true,
+              "shape_type": "visual",
+              "fluid_handling": "none"
+            },
+            {
+              "type": "origins:raycast",
+              "inverted": true,
+              "distance": 16,
+              "block": true,
+              "entity": false,
+              "shape_type": "visual",
+              "fluid_handling": "none",
+              "block_condition": {
+                "type": "origins:or",
+                "conditions": [
+                  {
+                    "type": "origins:block",
+                    "block": "minecraft:blue_bed"
+                  },
+                  {
+                    "type": "origins:block",
+                    "block": "minecraft:blue_wool"
+                  },
+                  {
+                    "type": "origins:block",
+                    "block": "minecraft:blue_carpet"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "action": {
+          "type": "origins:raycast",
+          "distance": 16,
+          "block": false,
+          "entity": true,
+          "shape_type": "visual",
+          "fluid_handling": "none",
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_to_set",
+                "set": "illman:spell_casting_target"
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:play_sound",
+                      "sound": "minecraft:entity.evoker.prepare_wololo"
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "resource": "illman:spell_casting_resource",
+                      "operation": "set",
+                      "change": 0
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "resource": "illman:spell_casting_spell",
+                      "operation": "set",
+                      "change": 4
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:resource",
+              "resource": "illman:spell_cooldown_vexes",
+              "comparison": "==",
+              "compare_to": 0
+            },
+            {
+              "type": "origins:raycast",
+              "distance": 12,
+              "block": false,
+              "entity": true,
+              "shape_type": "visual",
+              "fluid_handling": "none"
+            },
+            {
+              "type": "origins:raycast",
+              "inverted": true,
+              "distance": 12,
+              "block": true,
+              "entity": false,
+              "shape_type": "visual",
+              "fluid_handling": "none",
+              "block_condition": {
+                "type": "origins:or",
+                "conditions": [
+                  {
+                    "type": "origins:block",
+                    "block": "minecraft:blue_bed"
+                  },
+                  {
+                    "type": "origins:block",
+                    "block": "minecraft:blue_wool"
+                  },
+                  {
+                    "type": "origins:block",
+                    "block": "minecraft:blue_carpet"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "action": {
+          "type": "origins:raycast",
+          "distance": 12,
+          "block": false,
+          "entity": true,
+          "shape_type": "visual",
+          "fluid_handling": "none",
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_to_set",
+                "set": "illman:spell_casting_target"
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:play_sound",
+                      "sound": "minecraft:entity.evoker.prepare_summon"
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "resource": "illman:spell_casting_resource",
+                      "operation": "set",
+                      "change": 0
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "resource": "illman:spell_casting_spell",
+                      "operation": "set",
+                      "change": 3
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "hud_render": {
+    "should_render": false
+  },
+  "key": {
+    "key": "key.origins.secondary_active"
+  },
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:resource",
+        "resource": "illman:spell_casting_resource",
+        "comparison": "==",
+        "compare_to": 40
+      },
+      {
+        "type": "origins:resource",
+        "resource": "illman:spell_ticks",
+        "comparison": "==",
+        "compare_to": 0
+      }
+    ]
+  },
+  "name": "Summoning",
+  "description": "You can summon a vex that targets your opponent. This spell should be used with caution as the vex will target you if it can no longer find it's initial target. A totem of undying will cause an additional vex to be summoned. Sneaking will cause the wololo spell to be casted instead. Wololo changes blue sheep to red sheep. A totem of undying will cause wololo to tame any untamed, tameable entity. Casting wololo with a totem and emerald block will consume the block and allow you to interact with villagers and village golems for a short amount of time but will cause you to hurt them a little. Casting wololo with a totem and raw rabbit will consume the rabbit and allow you to mount a ravager but will not grant control of the ravager."
+}
