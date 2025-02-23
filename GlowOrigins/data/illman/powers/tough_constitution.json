@@ -1,0 +1,11 @@
+{
+    "type": "origins:attribute",
+    "modifier": {
+        "name": "Tough constitution max health increase",
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": 4
+    },
+    "name": "Tough Constitution",
+    "description": "Like illagers, you have two additional hearts of max health."
+}

@@ -1,0 +1,250 @@
+{
+
+  "type": "origins:multiple",
+
+  "blue_bed_sleep": {
+    "type": "origins:prevent_sleep",
+    "message": "You hate blue wool",
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:blue_bed"
+    }
+  },
+
+  "blue_wool_place": {
+    "type": "origins:prevent_block_place",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "tellraw @s {\"text\": \"You hate blue wool\", \"color\": \"red\"}"
+    },
+    "item_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:blue_bed"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:blue_wool"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:blue_carpet"
+          }
+        }
+      ]
+    }
+  },
+
+  "blue_wool_break": {
+    "type": "origins:modify_break_speed",
+    "block_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:block",
+          "block": "minecraft:blue_bed"
+        },
+        {
+          "type": "origins:block",
+          "block": "minecraft:blue_wool"
+        },
+        {
+          "type": "origins:block",
+          "block": "minecraft:blue_carpet"
+        }
+      ]
+    },
+    "modifier": {
+      "operation": "multiply_base",
+      "value": -0.9
+    },
+    "hardness_modifiers": [
+      {
+        "operation": "min_total",
+        "value": 0.1
+      }
+    ]
+  },
+
+  "blue_dye_use": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:blue_dye"
+      }
+    }
+  },
+
+  "blue_dye_sheep": {
+    "type": "origins:prevent_entity_use",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "title @s actionbar {\"text\": \"You hate blue wool!\", \"color\": \"red\"}"
+          },
+          {
+            "type": "origins:apply_effect",
+            "effects": [
+              {
+                "effect": "minecraft:nausea",
+                "duration": 200,
+                "is_ambient": true,
+                "show_particles": true,
+                "show_icon": true
+              },
+              {
+                "effect": "minecraft:slowness",
+                "duration": 3000,
+                "is_ambient": false,
+                "show_particles": false,
+                "show_icon": false
+              },
+              {
+                "effect": "minecraft:weakness",
+                "duration": 1500,
+                "is_ambient": false,
+                "show_particles": false,
+                "show_icon": false
+              },
+              {
+                "effect": "minecraft:mining_fatigue",
+                "duration": 3000,
+                "is_ambient": false,
+                "show_particles": false,
+                "show_icon": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:entity_type",
+        "entity_type": "minecraft:sheep"
+      }
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:blue_dye"
+      }
+    }
+  },
+
+  "red_bed_wake_up": {
+    "type": "origins:action_on_wake_up",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "title @s actionbar {\"translate\": \"You feel rejuvenated by a comfortable bed\", \"color\": \"red\"}"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:regeneration",
+              "duration": 200,
+              "is_ambient": true,
+              "show_particles": true,
+              "show_icon": true
+            },
+            {
+              "effect": "minecraft:absorption",
+              "duration": 12000,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": false
+            },
+            {
+              "effect": "minecraft:haste",
+              "duration": 6000,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": false
+            }
+          ]
+        }
+      ]
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:red_bed"
+    }
+  },
+
+  "blue_bed_wake_up": {
+    "type": "origins:action_on_wake_up",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "title @s actionbar {\"translate\": \"You feel exhausted by an uncomfortable bed\", \"color\": \"blue\"}"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:nausea",
+              "duration": 200,
+              "is_ambient": true,
+              "show_particles": true,
+              "show_icon": true
+            },
+            {
+              "effect": "minecraft:slowness",
+              "duration": 6000,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": false
+            },
+            {
+              "effect": "minecraft:weakness",
+              "duration": 3000,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": false
+            },
+            {
+              "effect": "minecraft:hunger",
+              "duration": 3000,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": false
+            },
+            {
+              "effect": "minecraft:mining_fatigue",
+              "duration": 6000,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": false
+            }
+          ]
+        }
+      ]
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:blue_bed"
+    }
+  },
+  "name": "Sense of Decor",
+  "description": "You love dark oak, spruce planks, and red wool but hate blue wool. Sleeping in a red bed will energize you but you will never willingly sleep in a blue bed. You would never place blue wool blocks and blue wool will block your spells. Being near dark oak blocks while standing on good flooring (dark oak, spruce planks, red wool) will cause the cost of your spells to be free."
+
+}

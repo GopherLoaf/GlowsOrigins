@@ -1,0 +1,9 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Armor to max armor",
+    "attribute": "minecraft:generic.armor",
+    "value": 30,
+    "operation": "addition"
+  }
+}

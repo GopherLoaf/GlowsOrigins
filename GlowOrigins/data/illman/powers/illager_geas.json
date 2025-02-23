@@ -1,0 +1,36 @@
+{
+
+    "type": "origins:multiple",
+
+    "melee": {
+        "type": "origins:modify_damage_dealt",
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "type": "origins:entity_group",
+                "group": "illager"
+            }
+        },
+        "modifier": {
+            "name": "Illager geas melee",
+            "operation": "multiply_total",
+            "value": -1
+        }
+    },
+
+    "projectile": {
+        "type": "origins:modify_projectile_damage",
+        "target_condition": {
+            "type": "origins:entity_group",
+            "group": "illager"
+        },
+        "modifier": {
+            "name": "Illager geas melee",
+            "operation": "multiply_total",
+            "value": -1
+        }
+    },
+    "name": "Illager Geas",
+    "description": "You have a geas that prevents you from directly harming illagers."
+
+}

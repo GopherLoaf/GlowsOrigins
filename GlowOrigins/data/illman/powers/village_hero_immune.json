@@ -1,0 +1,7 @@
+{
+  "type": "origins:effect_immunity",
+  "effects": [
+    "minecraft:hero_of_the_village"
+  ],
+  "hidden": true
+}

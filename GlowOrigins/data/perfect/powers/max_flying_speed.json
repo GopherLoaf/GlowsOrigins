@@ -1,0 +1,9 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Flying speed to max flying speed",
+    "attribute": "minecraft:generic.flying_speed",
+    "value": 1023.6,
+    "operation": "addition"
+  }
+}

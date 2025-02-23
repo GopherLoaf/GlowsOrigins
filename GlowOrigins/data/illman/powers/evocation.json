@@ -1,0 +1,155 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:if_else_list",
+    "actions": [
+      {
+        "condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:resource",
+              "resource": "illman:spell_cooldown_fangs",
+              "comparison": "==",
+              "compare_to": 0
+            },
+            {
+              "type": "origins:sneaking"
+            }
+          ]
+        },
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:play_sound",
+              "sound": "minecraft:entity.evoker.prepare_attack"
+            },
+            {
+              "type": "origins:change_resource",
+              "resource": "illman:spell_casting_resource",
+              "operation": "set",
+              "change": 0
+            },
+            {
+              "type": "origins:change_resource",
+              "resource": "illman:spell_casting_spell",
+              "operation": "set",
+              "change": 2
+            }
+          ]
+        }
+      },
+      {
+        "condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:resource",
+              "resource": "illman:spell_cooldown_fangs",
+              "comparison": "==",
+              "compare_to": 0
+            },
+            {
+              "type": "origins:raycast",
+              "distance": 12,
+              "block": false,
+              "entity": true,
+              "shape_type": "visual",
+              "fluid_handling": "none"
+            },
+            {
+              "type": "origins:raycast",
+              "inverted": true,
+              "distance": 12,
+              "block": true,
+              "entity": false,
+              "shape_type": "visual",
+              "fluid_handling": "none",
+              "block_condition": {
+                "type": "origins:or",
+                "conditions": [
+                  {
+                    "type": "origins:block",
+                    "block": "minecraft:blue_bed"
+                  },
+                  {
+                    "type": "origins:block",
+                    "block": "minecraft:blue_wool"
+                  },
+                  {
+                    "type": "origins:block",
+                    "block": "minecraft:blue_carpet"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "action": {
+          "type": "origins:raycast",
+          "distance": 12,
+          "block": false,
+          "entity": true,
+          "shape_type": "visual",
+          "fluid_handling": "none",
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_to_set",
+                "set": "illman:spell_casting_target"
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:play_sound",
+                      "sound": "minecraft:entity.evoker.prepare_attack"
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "resource": "illman:spell_casting_resource",
+                      "operation": "set",
+                      "change": 0
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "resource": "illman:spell_casting_spell",
+                      "operation": "set",
+                      "change": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "hud_render": {
+    "should_render": false
+  },
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:resource",
+        "resource": "illman:spell_casting_resource",
+        "comparison": "==",
+        "compare_to": 40
+      },
+      {
+        "type": "origins:resource",
+        "resource": "illman:spell_ticks",
+        "comparison": "==",
+        "compare_to": 0
+      }
+    ]
+  },
+  "name": "Evocation",
+  "description": "You can summon an evoker fang at your opponent. Using this ability will sneaking will position the spell at yourself and boost the spell's radius by 1 block. A totem of undying will boost this spell's radius by 1 block."
+}

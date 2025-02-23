@@ -1,0 +1,11 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Bad karma luck decrease",
+    "attribute": "minecraft:generic.luck",
+    "operation": "addition",
+    "value": -1.0
+  },
+  "name": "Bad Karma",
+  "description": "Your past misdeeds in the pursuit of power has given you terrible karma. You're less lucky than most others."
+}

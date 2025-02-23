@@ -1,0 +1,28 @@
+{
+  "type": "origins:recipe",
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "id": "illman:totem_crafting",
+    "pattern": [
+      "E#E",
+      "###",
+      "R#R"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:gold_block"
+      },
+      "E": {
+        "item": "minecraft:emerald_block"
+      },
+      "R": {
+        "item": "minecraft:red_wool"
+      }
+    },
+    "result": {
+      "item": "minecraft:totem_of_undying"
+    }
+  },
+  "name": "Totem Constructor",
+  "description": "You have the knowledge and magic necessary to construct totems of undying."
+}

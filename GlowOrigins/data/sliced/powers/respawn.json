@@ -1,0 +1,11 @@
+{
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "spawnpoint @s",
+		"permission_level": 4
+	},
+	"interval": 20,
+	"name": "Respawn",
+	"description": "When you die you respawn where you were last."
+}

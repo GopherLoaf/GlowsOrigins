@@ -1,0 +1,15 @@
+{
+	"type": "origins:action_over_time",
+	"interval": 50,
+	"entity_action": {
+		"type": "origins:heal",
+		"amount": 1
+	},
+	"condition": {
+		"type": "origins:relative_health",
+		"comparison": "<",
+		"compare_to": "1.0"
+	},
+	"name": "Injury Healing",
+	"description": "You will regenerate while injured."
+}

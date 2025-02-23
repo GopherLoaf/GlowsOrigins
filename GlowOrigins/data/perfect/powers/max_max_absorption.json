@@ -1,0 +1,9 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Max absorption to max max absorption",
+    "attribute": "minecraft:generic.max_absorption",
+    "value": 2048,
+    "operation": "addition"
+  }
+}
