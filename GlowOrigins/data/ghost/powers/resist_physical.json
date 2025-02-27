@@ -1,0 +1,40 @@
+{
+  "type": "origins:modify_damage_taken",
+  "damage_condition": {
+    "inverted": true,
+    "type": "origins:or",
+    "conditions": [
+      {
+        "type": "origins:type",
+        "damage_type": "minecraft:indirect_magic"
+      },
+      {
+        "type": "origins:type",
+        "damage_type": "minecraft:magic"
+      },
+      {
+        "type": "origins:type",
+        "damage_type": "minecraft:sonic_boom"
+      },
+      {
+        "type": "origins:type",
+        "damage_type": "minecraft:thorns"
+      },
+      {
+        "type": "origins:in_tag",
+        "tag": "minecraft:bypasses_effects"
+      },
+      {
+        "type": "origins:in_tag",
+        "tag": "minecraft:bypasses_invulnerability"
+      }
+    ]
+  },
+  "modifier": {
+    "name": "Resists physical",
+    "operation": "multiply_base_additive",
+    "value": -0.3
+  },
+  "name": "Mostly Incorporeal",
+  "description": "Non-magical attacks have trouble hurting you."
+}

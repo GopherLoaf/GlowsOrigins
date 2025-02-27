@@ -1,0 +1,28 @@
+{
+  "type": "origins:action_over_time",
+  "entity_action": {
+    "type": "origins:equipped_item_action",
+    "equipment_slot": "head",
+    "action": {
+      "type": "origins:damage"
+    }
+  },
+  "interval": 20,
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:exposed_to_sun"
+      },
+      {
+        "type": "origins:inventory",
+        "slot": "armor.head"
+      },
+      {
+        "type": "origins:invisible",
+        "inverted": true
+      }
+    ]
+  },
+  "hidden": true
+}

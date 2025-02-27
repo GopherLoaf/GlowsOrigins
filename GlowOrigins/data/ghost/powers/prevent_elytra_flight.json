@@ -1,0 +1,9 @@
+{
+  "type": "origins:prevent_elytra_flight",
+  "entity_action": {
+    "type": "origins:execute_command",
+    "command": "tellraw @s {\"text\": \"You cannot and will not glide!\", \"color\": \"red\"}"
+  },
+  "name": "Wingless",
+  "description": "You do not need wings to fly and refuse to use them."
+}

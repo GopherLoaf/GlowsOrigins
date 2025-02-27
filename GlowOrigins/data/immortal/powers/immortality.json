@@ -173,14 +173,11 @@
 				"amount": 24
 			},
 			{
-				"type": "origins:apply_effect",
-				"effect": {
-					"effect": "minecraft:instant_health",
-					"is_ambient": false,
-					"show_particles": false,
-					"show_icon": false,
-					"amplifier": 28,
-					"duration": 1
+				"type": "origins:delay",
+				"ticks": 1,
+				"action": {
+					"type": "origins:heal",
+					"amount": 1024
 				}
 			},
 			{

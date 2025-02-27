@@ -1,0 +1,27 @@
+{
+  "type": "origins:action_over_time",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:exhaust",
+        "amount": 4
+      },
+      {
+        "type": "origins:play_sound",
+        "sound": "minecraft:particle.soul_escape"
+      }
+    ]
+  },
+  "interval": 20,
+  "condition": {
+    "type": "origins:in_block",
+    "block_condition": {
+      "type": "origins:height",
+      "comparison": ">=",
+      "compare_to": 128
+    }
+  },
+  "name": "Ascension",
+  "description": "Being too close to the heavens will cause your soul to lose stability."
+}

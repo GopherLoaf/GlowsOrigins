@@ -1,0 +1,57 @@
+{
+  "type": "origins:action_on_hit",
+  "bientity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:if_else",
+        "condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:target_condition",
+              "condition": {
+                "inverted": true,
+                "type": "origins:entity_group",
+                "group": "undead"
+              }
+            },
+            {
+              "type": "origins:actor_condition",
+              "condition": {
+                "inverted": true,
+                "type": "origins:power_active",
+                "power": "ghost:ghost_toggle"
+              }
+            }
+          ]
+        },
+        "if_action": {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:feed",
+            "food": 1,
+            "saturation": 0
+          }
+        }
+      },
+      {
+        "type": "origins:damage",
+        "amount": 1,
+        "damage_type": "minecraft:freeze"
+      }
+    ]
+  },
+  "bientity_condition": {
+    "type": "origins:actor_condition",
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:empty"
+      }
+    }
+  },
+  "name": "Soul Touch",
+  "description": "You take a little nibble of the soul of anything you touch with your bare hands. This will also do a little freezing damage. You cannot nibble souls as a pure spirit."
+}

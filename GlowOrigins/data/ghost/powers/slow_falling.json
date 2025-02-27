@@ -1,0 +1,7 @@
+{
+  "type": "apoli:modify_falling",
+  "velocity": 0.04,
+  "take_fall_damage": false,
+  "name": "Ghostweight",
+  "description": "You fall as gently to the ground as a ghost would."
+}

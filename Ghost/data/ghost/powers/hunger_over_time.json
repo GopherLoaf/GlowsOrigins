@@ -1,0 +1,61 @@
+{
+  "type": "origins:action_over_time",
+  "entity_action": {
+    "type": "origins:if_else_list",
+    "actions": [
+      {
+        "condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:power_active",
+              "power": "ghost:ghost_toggle"
+            },
+            {
+              "type": "origins:creative_flying"
+            }
+          ]
+        },
+        "action": {
+          "type": "origins:exhaust",
+          "amount": 12.992
+        }
+      },
+      {
+        "condition": {
+          "type": "origins:power_active",
+          "power": "ghost:ghost_toggle"
+        },
+        "action": {
+          "type": "origins:exhaust",
+          "amount": 6.496
+        }
+      },
+      {
+        "condition": {
+          "type": "origins:biome",
+          "biome": "minecraft:soul_sand_valley"
+        },
+        "action": {
+          "type": "origins:feed",
+          "food": 1,
+          "saturation": 0
+        }
+      },
+      {
+        "condition": {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        },
+        "action": {
+          "type": "origins:exhaust",
+          "amount": 0.203
+        }
+      }
+    ]
+  },
+  "interval": 20,
+  "name": "Borrowed Time",
+  "description": "You are not supposed to be among the living and as such, every second you become exhausted from existing. Being in the nether stops this exhaustion and soul sand valleys will feed you."
+}

@@ -1,0 +1,38 @@
+{
+  "type": "origins:invulnerability",
+  "damage_condition": {
+    "inverted": true,
+    "type": "origins:or",
+    "conditions": [
+      {
+        "type": "origins:type",
+        "damage_type": "minecraft:indirect_magic"
+      },
+      {
+        "type": "origins:type",
+        "damage_type": "minecraft:magic"
+      },
+      {
+        "type": "origins:type",
+        "damage_type": "minecraft:sonic_boom"
+      },
+      {
+        "type": "origins:type",
+        "damage_type": "minecraft:thorns"
+      },
+      {
+        "type": "origins:in_tag",
+        "tag": "minecraft:bypasses_effects"
+      },
+      {
+        "type": "origins:in_tag",
+        "tag": "minecraft:bypasses_invulnerability"
+      }
+    ]
+  },
+  "condition": {
+    "type": "origins:power_active",
+    "power": "ghost:ghost_toggle"
+  },
+  "hidden": true
+}

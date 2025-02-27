@@ -1,0 +1,6 @@
+{
+  "type": "origins:entity_group",
+  "group": "undead",
+  "name": "Undead",
+  "description": "You are considered undead. Smite will deal extra damage, you are immune to poison, and the effects of healing and harming potions will be reversed."
+}

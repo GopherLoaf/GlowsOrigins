@@ -1,0 +1,20 @@
+{
+  "type": "origins:creative_flight",
+  "hidden": true,
+  "name": "Ghost Flight",
+  "description": "As a pure spirit, you can choose to use true flight instead of your normal float. This will be incredibly exhausting.",
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:power_active",
+        "power": "ghost:ghost_toggle"
+      },
+      {
+        "type": "origins:food_level",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    ]
+  }
+}

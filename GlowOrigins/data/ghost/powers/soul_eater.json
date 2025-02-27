@@ -1,0 +1,15 @@
+{
+  "type": "origins:self_action_on_kill",
+  "entity_action": {
+    "type": "origins:feed",
+    "food": 2,
+    "saturation": 1
+  },
+  "target_condition": {
+    "inverted": true,
+    "type": "origins:entity_group",
+    "group": "undead"
+  },
+  "name": "Soul Eater",
+  "description": "You feast on the souls of anything you kill."
+}

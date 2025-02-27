@@ -1,0 +1,67 @@
+{
+  "type": "origins:prevent_death",
+  "damage_condition": {
+    "inverted": true,
+    "type": "origins:or",
+    "conditions": [
+      {
+        "type": "origins:type",
+        "damage_type": "minecraft:indirect_magic"
+      },
+      {
+        "type": "origins:type",
+        "damage_type": "minecraft:magic"
+      },
+      {
+        "type": "origins:type",
+        "damage_type": "minecraft:sonic_boom"
+      },
+      {
+        "type": "origins:type",
+        "damage_type": "minecraft:thorns"
+      },
+      {
+        "type": "origins:in_tag",
+        "tag": "minecraft:bypasses_effects"
+      },
+      {
+        "type": "origins:in_tag",
+        "tag": "minecraft:bypasses_invulnerability"
+      }
+    ]
+  },
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:exhaust",
+        "amount": 160
+      },
+      {
+        "type": "origins:apply_effect",
+        "effect": {
+          "effect": "minecraft:levitation",
+          "duration": 100,
+          "amplifier": 0,
+          "is_ambient": false,
+          "show_particles": false,
+          "show_icon": false
+        }
+      },
+      {
+        "type": "origins:if_else",
+        "condition": {
+          "inverted": true,
+          "type": "origins:power_active",
+          "power": "ghost:ghost_toggle"
+        },
+        "if_action": {
+          "type": "origins:toggle",
+          "power": "ghost:ghost_toggle"
+        }
+      }
+    ]
+  },
+  "name": "Second Chance",
+  "description": "Instead of dying immediately, fatal damage will cause you to start ascending and become exhausted. This usually leads to death anyways."
+}

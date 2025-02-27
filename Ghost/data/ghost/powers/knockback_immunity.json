@@ -1,0 +1,13 @@
+{
+  "type": "origins:modify_attribute",
+  "attribute": "minecraft:generic.knockback_resistance",
+  "modifier": {
+    "operation": "set_base",
+    "value": 1
+  },
+  "condition": {
+    "type": "origins:power_active",
+    "power": "ghost:ghost_toggle"
+  },
+  "hidden": true
+}

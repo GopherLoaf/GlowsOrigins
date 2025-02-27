@@ -1,0 +1,9 @@
+{
+  "type": "origins:shaking",
+  "condition": {
+    "type": "origins:food_level",
+    "comparison": "==",
+    "compare_to": 0
+  },
+  "hidden": true
+}

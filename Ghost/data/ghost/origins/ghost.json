@@ -1,0 +1,39 @@
+{
+	"powers": [
+		"ghost:phasing",
+		"ghost:ghost_model",
+		"ghost:slow_falling",
+		"origins:fragile",
+		"origins:burn_in_daylight",
+		"ghost:ghost_float",
+		"ghost:hunger_over_time",
+		"ghost:resist_physical",
+		"ghost:weak_to_magic",
+		"ghost:prevent_elytra_flight",
+		"ghost:undead_group",
+		"ghost:knockback_resistance",
+		"ghost:prevent_eating",
+		"ghost:soul_eater",
+		"ghost:soul_touch",
+		"ghost:ascension",
+		"ghost:invisibility",
+		"ghost:immune_to_physical",
+		"ghost:knockback_immunity",
+		"ghost:no_falling",
+		"ghost:waning_existence",
+		"ghost:ghost_flight",
+		"ghost:ignore_water",
+		"ghost:shaking",
+		"ghost:waning_model",
+		"ghost:fire_immunity",
+		"ghost:ghost_death",
+		"ghost:true_phasing",
+		"ghost:ghost_toggle"
+	],
+	"icon": {
+		"item": "minecraft:ghast_tear"
+	},
+	"impact": 3,
+	"name": "Ghost",
+	"description": "A spirit of unknown origin walking the living world once more."
+}

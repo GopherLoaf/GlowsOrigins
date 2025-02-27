@@ -1,0 +1,44 @@
+{
+  "type": "apoli:modify_falling",
+  "velocity": 0,
+  "take_fall_damage": false,
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:power_active",
+        "power": "ghost:ghost_toggle"
+      },
+      {
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:sneaking"
+              },
+              {
+                "type": "origins:fall_flying"
+              }
+            ]
+          },
+          {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:sneaking",
+                "inverted": true
+              },
+              {
+                "type": "origins:fall_flying",
+                "inverted": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "hidden": true
+}

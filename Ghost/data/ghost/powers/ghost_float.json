@@ -1,0 +1,46 @@
+{
+  "type": "origins:active_self",
+  "condition": {
+    "type": "origins:block_in_radius",
+    "radius": 3,
+    "block_condition": {
+      "type": "origins:or",
+      "inverted": true,
+      "conditions": [
+        {
+          "type": "origins:block",
+          "block": "minecraft:air"
+        },
+        {
+          "type": "origins:block",
+          "block": "minecraft:cave_air"
+        },
+        {
+          "type": "origins:block",
+          "block": "minecraft:void_air"
+        }
+      ]
+    }
+  },
+  "entity_action": {
+    "type": "origins:apply_effect",
+    "effect": {
+      "effect": "minecraft:levitation",
+      "duration": 4,
+      "amplifier": 4,
+      "is_ambient": false,
+      "show_particles": false,
+      "show_icon": false
+    }
+  },
+  "cooldown": 2,
+  "hud_render": {
+    "should_render": false
+  },
+  "key": {
+    "key": "key.jump",
+    "continuous": true
+  },
+  "name": "Ghost Float",
+  "description": "You can hold space to float into the air however you must be close enough to a block to do so."
+}

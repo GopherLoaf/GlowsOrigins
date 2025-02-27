@@ -1,0 +1,10 @@
+{
+  "type": "origins:phasing",
+  "render_type": "blindness",
+  "view_distance": 100,
+  "condition": {
+    "type": "origins:power_active",
+    "power": "ghost:ghost_toggle"
+  },
+  "hidden": true
+}

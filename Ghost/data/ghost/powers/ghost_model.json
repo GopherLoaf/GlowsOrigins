@@ -1,0 +1,13 @@
+{
+  "type": "origins:model_color",
+  "red": 0.75,
+  "blue": 0.75,
+  "alpha": 0.75,
+  "condition": {
+    "type": "origins:food_level",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "name": "Transparency",
+  "description": "You look like a ghost."
+}

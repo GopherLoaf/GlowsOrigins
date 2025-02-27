@@ -1,0 +1,17 @@
+{
+  "type": "origins:phasing",
+  "blacklist": true,
+  "render_type": "blindness",
+  "view_distance": 10,
+  "block_condition": {
+    "type": "origins:in_tag",
+    "tag": "ghost:unphasable"
+  },
+  "condition": {
+    "inverted": true,
+    "type": "origins:power_active",
+    "power": "ghost:ghost_toggle"
+  },
+  "name": "Phasing",
+  "description": "You're able to move through most blocks as if they weren't there."
+}

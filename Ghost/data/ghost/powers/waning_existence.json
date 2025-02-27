@@ -1,0 +1,38 @@
+{
+  "type": "origins:action_when_damage_taken",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:apply_effect",
+        "effect": {
+          "effect": "minecraft:levitation",
+          "duration": 100,
+          "amplifier": 0,
+          "is_ambient": false,
+          "show_particles": false,
+          "show_icon": false
+        }
+      },
+      {
+        "type": "origins:if_else",
+        "condition": {
+          "inverted": true,
+          "type": "origins:power_active",
+          "power": "ghost:ghost_toggle"
+        },
+        "if_action": {
+          "type": "origins:toggle",
+          "power": "ghost:ghost_toggle"
+        }
+      }
+    ]
+  },
+  "damage_condition": {
+    "type": "origins:type",
+    "damage_type": "minecraft:starve"
+  },
+  "cooldown": 1,
+  "name": "Destabilization",
+  "description": "If you're completely exhausted you will begin to ascend and forcefully become a pure spirit."
+}
