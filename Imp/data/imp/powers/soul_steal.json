@@ -1,0 +1,49 @@
+{
+  "type": "origins:self_action_on_kill",
+  "entity_action": {
+    "type": "origins:if_else",
+    "condition": {
+      "type": "origins:resource",
+      "resource": "imp:souls",
+      "comparison": "==",
+      "compare_to": 20
+    },
+    "if_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:chance",
+            "chance": 0.5
+          },
+          "if_action": {
+            "type": "origins:execute_command",
+            "command": "tellraw @s {\"text\": \"I can't handle that much soul power!\"}"
+          },
+          "else_action": {
+            "type": "origins:execute_command",
+            "command": "tellraw @s {\"text\": \"That was one soul too many!\"}"
+          }
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "imp:souls",
+          "change": -10
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.note_block.flute",
+          "category": "voice"
+        }
+      ]
+    },
+    "else_action": {
+      "type": "origins:change_resource",
+      "resource": "imp:souls",
+      "change": 1
+    }
+  },
+  "name": "Soul Thief",
+  "description": "You steal the soul of anything you kill."
+}

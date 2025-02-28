@@ -1,0 +1,77 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:change_resource",
+        "resource": "imp:invincibility_frames_resource",
+        "change": 10
+      },
+      {
+        "type": "origins:if_else",
+        "condition": {
+          "type": "origins:resource",
+          "resource": "imp:soul_echo",
+          "comparison": ">",
+          "compare_to": 0
+        },
+        "if_action": {
+          "type": "origins:change_resource",
+          "resource": "imp:soul_echo",
+          "operation": "set",
+          "change": 140
+        },
+        "else_action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:change_resource",
+              "resource": "imp:souls",
+              "change": -1
+            },
+            {
+              "type": "origins:change_resource",
+              "resource": "imp:soul_echo",
+              "operation": "set",
+              "change": 20
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "key": {
+    "key": "key.origins.secondary_active"
+  },
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type": "origins:resource",
+            "resource": "imp:souls",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "origins:resource",
+            "resource": "imp:soul_echo",
+            "comparison": ">",
+            "compare_to": 0
+          }
+        ]
+      },
+      {
+        "type": "origins:resource",
+        "resource": "imp:invincibility_frames_resource",
+        "comparison": "==",
+        "compare_to": 0
+      }
+    ]
+  },
+  "name": "Soul Hop",
+  "description": "Can hop through time and space."
+}

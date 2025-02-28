@@ -1,0 +1,20 @@
+{
+	"powers": [
+		"imp:souls",
+		"imp:soul_hop",
+		"imp:less_nourishment",
+		"imp:soul_steal",
+		"imp:soul_echo",
+		"imp:soul_eater",
+		"imp:imp_skin",
+		"origins:nether_spawn",
+		"imp:soul_reset",
+		"imp:invincibility_frames"
+	],
+	"icon": {
+		"item": "minecraft:netherrack"
+	},
+	"impact": 3,
+	"name": "Imp",
+	"description": "The soul starved. Pardon me if I don't shake your hand."
+}

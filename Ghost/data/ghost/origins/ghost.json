@@ -23,6 +23,7 @@
 		"ghost:waning_existence",
 		"ghost:ghost_flight",
 		"ghost:ignore_water",
+		"ghost:prevent_collision",
 		"ghost:shaking",
 		"ghost:waning_model",
 		"ghost:fire_immunity",

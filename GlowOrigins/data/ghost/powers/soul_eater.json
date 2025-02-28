@@ -3,7 +3,7 @@
   "entity_action": {
     "type": "origins:feed",
     "food": 2,
-    "saturation": 1
+    "saturation": 1.2
   },
   "target_condition": {
     "inverted": true,

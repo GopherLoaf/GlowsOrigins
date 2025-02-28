@@ -1,0 +1,8 @@
+{
+  "type": "origins:prevent_entity_collision",
+  "condition": {
+    "type": "origins:power_active",
+    "power": "ghost:ghost_toggle"
+  },
+  "hidden": true
+}
