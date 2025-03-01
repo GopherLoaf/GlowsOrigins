@@ -1,201 +1,212 @@
 {
   "type": "origins:active_self",
   "entity_action": {
-    "type": "origins:if_else",
-    "condition": {
-      "type": "origins:sneaking"
-    },
-    "if_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:area_of_effect",
-          "radius": 8,
-          "shape": "sphere",
-          "bientity_action": {
-            "type": "origins:if_else",
-            "condition": {
-              "type": "origins:and",
-              "conditions": [
-                {
-                  "type": "origins:target_condition",
-                  "condition": {
-                    "type": "origins:or",
-                    "conditions": [
-                      {
-                        "type": "origins:tamed"
-                      },
-                      {
-                        "type": "origins:entity_type",
-                        "entity_type": "minecraft:player"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "inverted": true,
-                  "type": "origins:or",
+    "type": "origins:if_else_list",
+    "actions": [
+      {
+        "condition": {
+          "type": "origins:sneaking"
+        },
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:area_of_effect",
+              "radius": 8,
+              "shape": "sphere",
+              "bientity_action": {
+                "type": "origins:if_else",
+                "condition": {
+                  "type": "origins:and",
                   "conditions": [
                     {
-                      "type": "origins:attacker"
-                    },
-                    {
-                      "type": "origins:invert",
+                      "type": "origins:target_condition",
                       "condition": {
-                        "type": "origins:attacker"
+                        "type": "origins:or",
+                        "conditions": [
+                          {
+                            "type": "origins:tamed"
+                          },
+                          {
+                            "type": "origins:entity_type",
+                            "entity_type": "minecraft:player"
+                          }
+                        ]
                       }
                     },
                     {
-                      "type": "origins:attack_target"
-                    },
-                    {
-                      "type": "origins:invert",
-                      "condition": {
-                        "type": "origins:attack_target"
-                      }
+                      "inverted": true,
+                      "type": "origins:or",
+                      "conditions": [
+                        {
+                          "type": "origins:attacker"
+                        },
+                        {
+                          "type": "origins:invert",
+                          "condition": {
+                            "type": "origins:attacker"
+                          }
+                        },
+                        {
+                          "type": "origins:attack_target"
+                        },
+                        {
+                          "type": "origins:invert",
+                          "condition": {
+                            "type": "origins:attack_target"
+                          }
+                        }
+                      ]
                     }
                   ]
+                },
+                "if_action": {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:heal",
+                    "amount": 4
+                  }
                 }
-              ]
+              },
+              "include_actor": true
             },
-            "if_action": {
-              "type": "origins:target_action",
-              "action": {
-                "type": "origins:heal",
-                "amount": 4
-              }
-            }
-          },
-          "include_actor": true
-        },
-        {
-          "type": "origins:if_else",
-          "condition": {
-            "type": "origins:chance",
-            "chance": 0.125
-          },
-          "if_action": {
-            "type": "origins:execute_command",
-            "command": "tellraw @s {\"text\": \"Be free!\"}"
-          },
-          "else_action": {
-            "type": "origins:if_else",
-            "condition": {
-              "type": "origins:chance",
-              "chance": 0.143
-            },
-            "if_action": {
-              "type": "origins:execute_command",
-              "command": "tellraw @s {\"text\": \"I simply couldn't bear the guilt.\"}"
-            },
-            "else_action": {
+            {
               "type": "origins:if_else",
               "condition": {
                 "type": "origins:chance",
-                "chance": 0.167
+                "chance": 0.125
               },
               "if_action": {
                 "type": "origins:execute_command",
-                "command": "tellraw @s {\"text\": \"Sorry, little soul.\"}"
+                "command": "tellraw @s {\"text\": \"Be free!\"}"
               },
               "else_action": {
                 "type": "origins:if_else",
                 "condition": {
                   "type": "origins:chance",
-                  "chance": 0.2
+                  "chance": 0.143
                 },
                 "if_action": {
                   "type": "origins:execute_command",
-                  "command": "tellraw @s {\"text\": \"I didn't want to do it!\"}"
+                  "command": "tellraw @s {\"text\": \"I simply couldn't bear the guilt.\"}"
                 },
                 "else_action": {
                   "type": "origins:if_else",
                   "condition": {
                     "type": "origins:chance",
-                    "chance": 0.25
+                    "chance": 0.167
                   },
                   "if_action": {
                     "type": "origins:execute_command",
-                    "command": "tellraw @s {\"text\": \"I can't bring myself to eat it.\"}"
+                    "command": "tellraw @s {\"text\": \"Sorry, little soul.\"}"
                   },
                   "else_action": {
                     "type": "origins:if_else",
                     "condition": {
                       "type": "origins:chance",
-                      "chance": 0.333
+                      "chance": 0.2
                     },
                     "if_action": {
                       "type": "origins:execute_command",
-                      "command": "tellraw @s {\"text\": \"Goodbye, sweet soul.\"}"
+                      "command": "tellraw @s {\"text\": \"I didn't want to do it!\"}"
                     },
                     "else_action": {
                       "type": "origins:if_else",
                       "condition": {
                         "type": "origins:chance",
-                        "chance": 0.5
+                        "chance": 0.25
                       },
                       "if_action": {
                         "type": "origins:execute_command",
-                        "command": "tellraw @s {\"text\": \"I'm too squeamish to eat it anyway.\"}"
+                        "command": "tellraw @s {\"text\": \"I can't bring myself to eat it.\"}"
                       },
                       "else_action": {
-                        "type": "origins:execute_command",
-                        "command": "tellraw @s {\"text\": \"My existence is a curse.\"}"
+                        "type": "origins:if_else",
+                        "condition": {
+                          "type": "origins:chance",
+                          "chance": 0.333
+                        },
+                        "if_action": {
+                          "type": "origins:execute_command",
+                          "command": "tellraw @s {\"text\": \"Goodbye, sweet soul.\"}"
+                        },
+                        "else_action": {
+                          "type": "origins:if_else",
+                          "condition": {
+                            "type": "origins:chance",
+                            "chance": 0.5
+                          },
+                          "if_action": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s {\"text\": \"I'm too squeamish to eat it anyway.\"}"
+                          },
+                          "else_action": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s {\"text\": \"My existence is a curse.\"}"
+                          }
+                        }
                       }
                     }
                   }
                 }
               }
+            },
+            {
+              "type": "origins:play_sound",
+              "sound": "minecraft:block.note_block.flute",
+              "category": "voice"
+            },
+            {
+              "type": "origins:play_sound",
+              "sound": "minecraft:particle.soul_escape"
+            },
+            {
+              "type": "origins:spawn_particles",
+              "particle": {
+                "type": "minecraft:soul"
+              },
+              "count": 1,
+              "speed": 1.0
+            },
+            {
+              "type": "origins:change_resource",
+              "resource": "imp:souls",
+              "change": -1
             }
-          }
-        },
-        {
-          "type": "origins:play_sound",
-          "sound": "minecraft:block.note_block.flute",
-          "category": "voice"
-        },
-        {
-          "type": "origins:play_sound",
-          "sound": "minecraft:particle.soul_escape"
-        },
-        {
-          "type": "origins:spawn_particles",
-          "particle": {
-            "type": "minecraft:soul"
-          },
-          "count": 1,
-          "speed": 1.0
-        },
-        {
-          "type": "origins:change_resource",
-          "resource": "imp:souls",
-          "change": -1
+          ]
         }
-      ]
-    },
-    "else_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:feed",
-          "food": 3,
-          "saturation": 1.6
+      },
+      {
+        "condition": {
+          "type": "origins:food_level",
+          "comparison": "<",
+          "compare_to": 20
         },
-        {
-          "type": "origins:play_sound",
-          "sound": "minecraft:entity.generic.eat"
-        },
-        {
-          "type": "origins:play_sound",
-          "sound": "minecraft:entity.player.burp"
-        },
-        {
-          "type": "origins:change_resource",
-          "resource": "imp:souls",
-          "change": -1
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:feed",
+              "food": 3,
+              "saturation": 1.6
+            },
+            {
+              "type": "origins:play_sound",
+              "sound": "minecraft:entity.generic.eat"
+            },
+            {
+              "type": "origins:play_sound",
+              "sound": "minecraft:entity.player.burp"
+            },
+            {
+              "type": "origins:change_resource",
+              "resource": "imp:souls",
+              "change": -1
+            }
+          ]
         }
-      ]
-    }
+      }
+    ]
   },
   "condition": {
     "type": "origins:resource",

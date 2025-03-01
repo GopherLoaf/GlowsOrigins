@@ -9,7 +9,8 @@
 		"imp:imp_skin",
 		"origins:nether_spawn",
 		"imp:soul_reset",
-		"imp:invincibility_frames"
+		"imp:invincibility_frames",
+		"imp:prevent_villager_use"
 	],
 	"icon": {
 		"item": "minecraft:netherrack"

@@ -15,10 +15,16 @@
           "type": "origins:change_resource",
           "resource": "imp:souls",
           "operation": "set",
-          "change": 1
+          "change": 0
         }
       ]
     }
+  },
+  "condition": {
+    "type": "origins:command",
+    "command": "gamerule keepInventory",
+    "comparison": "==",
+    "compare_to": 0
   },
   "hidden": true
 }
