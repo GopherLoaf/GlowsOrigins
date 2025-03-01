@@ -35,6 +35,19 @@
           "type": "origins:play_sound",
           "sound": "minecraft:block.note_block.flute",
           "category": "voice"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:particle.soul_escape",
+          "volume": 10.0
+        },
+        {
+          "type": "origins:spawn_particles",
+          "particle": {
+            "type": "minecraft:soul"
+          },
+          "count": 10,
+          "speed": 1.0
         }
       ]
     },

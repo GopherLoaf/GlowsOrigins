@@ -14,6 +14,13 @@
           "fall_distance": 0
         },
         {
+          "type": "origins:add_velocity",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "set": true
+        },
+        {
           "type": "origins:play_sound",
           "sound": "minecraft:entity.player.teleport"
         },
@@ -22,7 +29,8 @@
           "distance": 40,
           "block": true,
           "entity": false,
-          "fluid_handling": "any",
+          "fluid_handling": "none",
+          "shape_type": "collider",
           "command_at_hit": "teleport @s ~ ~ ~",
           "miss_action": {
             "type": "origins:execute_command",
