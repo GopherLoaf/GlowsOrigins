@@ -1,0 +1,48 @@
+{
+
+  "type": "origins:multiple",
+
+  "regeneration": {
+    "type": "origins:stacking_status_effect",
+    "min_stacks": -1,
+    "max_stacks": 1,
+    "duration_per_stack": 100,
+    "tick_rate": 20,
+    "effect": {
+      "effect": "minecraft:regeneration"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:moving",
+          "inverted": true
+        },
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water"
+        }
+      ]
+    }
+  },
+
+  "invisibility": {
+    "type": "origins:invisibility",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:moving",
+          "inverted": true
+        },
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water"
+        }
+      ]
+    }
+  },
+  "name": "Play Dead",
+  "description": "You have the ability to play dead to regenerate by not moving when submerged in water."
+
+}
