@@ -9,7 +9,8 @@
 		"origins:fragile",
 		"origins:weak_arms",
 		"origins:aquatic",
-		"origins:conduit_power_on_land"
+		"origins:conduit_power_on_land",
+		"axolotl:xolotl_protection"
 	],
 	"icon": {
 		"item": "minecraft:axolotl_bucket"
