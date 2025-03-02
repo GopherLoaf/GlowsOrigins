@@ -1,0 +1,100 @@
+{
+
+  "type": "origins:multiple",
+
+  "lightning": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:is_lightning"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:trident"
+            }
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:trident"
+            }
+          }
+        },
+        {
+          "type": "origins:enchantment",
+          "enchantment": "minecraft:channeling",
+          "calculation": "sum",
+          "comparison": ">",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+
+  "fire": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:is_fire"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:trident"
+            }
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:trident"
+            }
+          }
+        },
+        {
+          "type": "origins:enchantment",
+          "enchantment": "minecraft:channeling",
+          "calculation": "sum",
+          "comparison": ">",
+          "compare_to": 0
+        }
+      ]
+    },
+    "modifier": {
+      "name": "Xolotl fire protection",
+      "operation": "multiply_base_additive",
+      "value": -0.5
+    }
+  },
+
+  "channeling": {
+    "type": "origins:modify_enchantment_level",
+    "enchantment": "minecraft:channeling",
+    "modifier": {
+      "operation": "add_base_early",
+      "value": 1
+    }
+  },
+  "hidden": true
+
+}
