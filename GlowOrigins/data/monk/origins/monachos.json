@@ -1,0 +1,23 @@
+{
+	"powers": [
+		"origins:fresh_air",
+		"origins:like_air",
+		"monk:double_jump",
+		"monk:air_bending",
+		"origins:vegetarian",
+		"origins:fragile",
+		"origins:climbing",
+		"origins:light_armor",
+		"monk:less_exhaustion",
+		"origins:fall_immunity",
+		"origins:sprint_jump",
+		"origins:weak_arms",
+		"origins:extra_reach"
+	],
+	"icon": {
+		"item": "minecraft:jungle_leaves"
+	},
+	"impact": 2,
+	"name": "Monachos",
+	"description": "Primates who have learned the art of manipulating air."
+}
