@@ -1,0 +1,37 @@
+{
+  "type": "origins:invisibility",
+  "render_armor": false,
+  "condition": {
+    "type": "origins:or",
+    "conditions": [
+      {
+        "type": "origins:sneaking"
+      },
+      {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:in_block",
+            "block_condition": {
+              "type": "origins:light_level",
+              "light_type": "sky",
+              "comparison": "<=",
+              "compare_to": 7
+            }
+          },
+          {
+            "type": "origins:in_block",
+            "block_condition": {
+              "type": "origins:light_level",
+              "light_type": "block",
+              "comparison": "<=",
+              "compare_to": 0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "name": "One With The Shadows",
+  "description": "Sneaking causes you to become completely invisible, including any worn equipment. Dark places allow you to become invisible without needing to sneak."
+}

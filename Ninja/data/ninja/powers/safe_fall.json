@@ -1,0 +1,14 @@
+{
+  "type": "origins:modify_damage_taken",
+  "damage_condition": {
+    "type": "origins:type",
+    "damage_type": "minecraft:fall"
+  },
+  "modifier": {
+    "name": "Safe fall height increase",
+    "operation": "add_base_early",
+    "value": -9
+  },
+  "name": "Safe Fall",
+  "description": "Your body is honed and trained to take falls. You're able to fall from higher without taking damage."
+}

@@ -1,0 +1,27 @@
+{
+
+  "type": "origins:multiple",
+
+  "amplifier": {
+    "type": "origins:modify_status_effect_amplifier",
+    "status_effect": "minecraft:poison",
+    "modifier": {
+      "operation": "add_base_early",
+      "value": -1
+    }
+  },
+
+  "duration": {
+    "type": "origins:modify_status_effect_duration",
+    "status_effects": [
+      "minecraft:poison",
+      "minecraft:nausea"
+    ],
+    "modifier": {
+      "operation": "multiply_base_multiplicative",
+      "value": -0.5
+    }
+  },
+  "name": "Intoxication Tolerance",
+  "description": "You've exposed your body to so much poison that it's built up a tolerance to being poisoned."
+}

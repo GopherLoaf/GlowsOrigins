@@ -1,0 +1,20 @@
+{
+  "type": "origins:modify_damage_dealt",
+  "condition": {
+    "type": "origins:invisible"
+  },
+  "bientity_condition": {
+    "type": "origins:relative_rotation",
+    "actor_rotation": "head",
+    "target_rotation": "body",
+    "comparison": ">=",
+    "compare_to": 0.4
+  },
+  "modifier": {
+    "name": "Back stab bonus",
+    "operation": "multiply_total_multiplicative",
+    "value": 1
+  },
+  "name": "Backstabber",
+  "description": "You're good at exploiting your opponents vulnerabilities. Melee attacks done to an opponents back while invisible will deal twice the normal damage."
+}
