@@ -1,0 +1,17 @@
+{
+  "type": "origins:prevent_game_event",
+  "events": [
+    "minecraft:step",
+    "minecraft:hit_ground",
+    "minecraft:container_close",
+    "minecraft:container_open",
+    "minecraft:projectile_shoot",
+    "minecraft:block_close",
+    "minecraft:block_open",
+    "minecraft:block_deactivate",
+    "minecraft:block_activate",
+    "minecraft:block_change"
+  ],
+  "name": "Velvet Body",
+  "description": "Actions such as walking, landing, shooting projectiles, opening chests, switching a lever, and opening doors don't cause any vibrations which could otherwise be picked up by nearby lifeforms."
+}
