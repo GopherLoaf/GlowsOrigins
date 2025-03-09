@@ -1,0 +1,13 @@
+{
+  "type": "origins:attribute_modify_transfer",
+  "class": "modify_air_speed",
+  "attribute": "minecraft:generic.movement_speed",
+  "multiplier": 1.5,
+  "condition": {
+    "type": "origins:power_active",
+    "power": "sylph:air_form_toggle",
+    "inverted": true
+  },
+  "name": "Like Wind",
+  "description": "Modifiers to your walking speed also apply while you're airborne with a 50% increase."
+}

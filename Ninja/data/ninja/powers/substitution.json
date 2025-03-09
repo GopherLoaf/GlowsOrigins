@@ -78,10 +78,8 @@
           }
         },
         {
-          "type": "origins:change_resource",
-          "resource": "ninja:substitution_resource",
-          "operation": "set",
-          "change": 0
+          "type": "origins:trigger_cooldown",
+          "power": "ninja:substitution_resource"
         }
       ]
     },

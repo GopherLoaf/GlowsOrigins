@@ -1,0 +1,121 @@
+{
+
+  "type": "origins:multiple",
+
+  "toggle": {
+    "type": "origins:toggle",
+    "active_by_default": true
+  },
+
+  "invisible": {
+    "type": "origins:invisibility",
+    "condition": {
+      "type": "origins:power_active",
+      "power": "sylph:air_form_toggle"
+    }
+  },
+
+  "float": {
+    "type": "origins:active_self",
+    "condition": {
+      "type": "origins:power_active",
+      "power": "sylph:air_form_toggle"
+    },
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "minecraft:levitation",
+        "duration": 4,
+        "amplifier": 1,
+        "is_ambient": false,
+        "show_particles": false,
+        "show_icon": false
+      }
+    },
+    "cooldown": 2,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.jump",
+      "continuous": true
+    }
+  },
+
+  "no_fall": {
+    "type": "apoli:modify_falling",
+    "velocity": 0,
+    "take_fall_damage": false,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "sylph:air_form_toggle"
+        },
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:sneaking"
+                },
+                {
+                  "type": "origins:fall_flying"
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:sneaking",
+                  "inverted": true
+                },
+                {
+                  "type": "origins:fall_flying",
+                  "inverted": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "hidden": true
+  },
+
+  "no_armor": {
+    "type": "origins:conditioned_restrict_armor",
+    "head": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "chest": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "legs": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "feet": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "condition": {
+      "type": "origins:power_active",
+      "power": "sylph:air_form_toggle"
+    },
+    "tick_rate": 20
+  },
+  "name": "Air Form",
+  "description": "You can become pure air causing you to become invisible and giving you the ability to fly. In exchange, you cannot wear any equipment and will be significantly slower."
+
+}

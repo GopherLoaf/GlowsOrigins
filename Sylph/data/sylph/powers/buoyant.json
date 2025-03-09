@@ -1,0 +1,16 @@
+{
+  "type": "origins:action_over_time",
+  "entity_action": {
+    "type": "origins:add_velocity",
+    "y": 0.1
+  },
+  "interval": 2,
+  "condition": {
+    "type": "origins:fluid_height",
+    "fluid": "minecraft:water",
+    "comparison": ">",
+    "compare_to": 0.4
+  },
+  "name": "Buoyant",
+  "description": "You float in water instead of sinking."
+}

@@ -1,0 +1,47 @@
+{
+
+  "type": "origins:multiple",
+
+  "attack_speed": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "addition",
+      "value": 0.4,
+      "name": "Attack speed increase"
+    }
+  },
+
+  "quick_charge": {
+    "type": "origins:modify_enchantment_level",
+    "enchantment": "minecraft:quick_charge",
+    "modifier": {
+      "operation": "add_base_late",
+      "value": 1
+    }
+  },
+
+  "hex": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "name": "Extra damage while sprinting off ground",
+      "value": 0.4,
+      "operation": "multiply_base"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sprinting"
+        },
+        {
+          "type": "origins:on_block",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "name": "Wind Tactics",
+  "description": "You have an increased attack speed and crossbow reload rate. You also get a 40% melee damage increase while off the ground and sprinting."
+
+}

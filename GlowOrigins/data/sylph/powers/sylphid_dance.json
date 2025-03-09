@@ -1,0 +1,228 @@
+{
+
+  "type": "origins:multiple",
+
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1800,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+      "should_render": true,
+      "bar_index": 8
+    },
+    "min_action": {
+      "type": "origins:change_resource",
+      "resource": "sylph:sylphid_dance_boolean",
+      "change": 0,
+      "operation": "set"
+    }
+  },
+
+  "boolean": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "hud_render": {
+      "should_render": false
+    }
+  },
+
+  "over_time": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "sylph:sylphid_dance_boolean",
+        "comparison": "==",
+        "compare_to": 0
+      },
+      "if_action": {
+        "type": "origins:change_resource",
+        "resource": "sylph:sylphid_dance_resource",
+        "change": 1
+      },
+      "else_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:change_resource",
+            "resource": "sylph:sylphid_dance_resource",
+            "change": -18
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "teleport @s ~ ~ ~ ~18 ~"
+          },
+          {
+            "type": "origins:if_else",
+            "condition": {
+              "type": "origins:power_active",
+              "power": "sylph:air_form_toggle"
+            },
+            "if_action": {
+              "type": "origins:area_of_effect",
+              "radius": 8,
+              "bientity_action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:add_velocity",
+                    "z": -1
+                  },
+                  {
+                    "type": "origins:target_action",
+                    "action": {
+                      "type": "origins:add_velocity",
+                      "y": 0.5
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "interval": 1
+  },
+
+  "quick_charge": {
+    "type": "origins:modify_enchantment_level",
+    "enchantment": "minecraft:quick_charge",
+    "modifier": {
+      "operation": "add_base_late",
+      "value": 1
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "sylph:sylphid_dance_boolean",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+
+  "piercing": {
+    "type": "origins:modify_enchantment_level",
+    "enchantment": "minecraft:piercing",
+    "modifier": {
+      "operation": "add_base_late",
+      "value": 4
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "sylph:sylphid_dance_boolean",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+
+  "sweeping_edge": {
+    "type": "origins:modify_enchantment_level",
+    "enchantment": "minecraft:sweeping_edge",
+    "modifier": {
+      "operation": "add_base_late",
+      "value": 3
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "sylph:sylphid_dance_boolean",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+
+  "power": {
+    "type": "origins:modify_enchantment_level",
+    "enchantment": "minecraft:power",
+    "modifier": {
+      "operation": "add_base_late",
+      "value": 3
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "sylph:sylphid_dance_boolean",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+
+  "attack_speed": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "multiply_total",
+      "value": 1,
+      "name": "Sylphid dance attack speed"
+    },
+    "tick_rate": 1,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "sylph:sylphid_dance_boolean",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+
+  "knockback-resistance": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.knockback_resistance",
+      "operation": "addition",
+      "value": 0.6,
+      "name": "Sylphid dance knockback resistance"
+    },
+    "tick_rate": 1,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "sylph:sylphid_dance_boolean",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+
+  "active_self": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "sylph:sylphid_dance_boolean",
+          "change": 1
+        },
+        {
+          "type": "origins:area_of_effect",
+          "radius": 16,
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:apply_effect",
+              "effect": {
+                "effect": "minecraft:slowness",
+                "duration": 100,
+                "amplifier": 3,
+                "is_ambient": false,
+                "show_particles": false,
+                "show_icon": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    "key": {
+      "key": "key.origins.secondary_active"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "sylph:sylphid_dance_resource",
+      "comparison": ">=",
+      "compare_to": 1800
+    }
+  },
+  "name": "Sylphid Dance",
+  "description": "Create a mini whirlwind by spinning rapidly to attract and launch any entities near you. During this, you have increased attack speed, sweeping edge, crossbow reload, piercing, and power. You only launch entities in your air form. All that spinning is dizzying so it takes a while to do it again."
+
+}

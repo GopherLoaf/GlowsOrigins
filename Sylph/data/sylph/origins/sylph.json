@@ -1,0 +1,30 @@
+{
+	"powers": [
+		"origins:slow_falling",
+		"origins:fresh_air",
+		"sylph:like_wind",
+		"sylph:air_skin",
+		"sylph:air_form",
+		"origins:tailwind",
+		"sylph:double_jump",
+		"origins:claustrophobia",
+		"sylph:air_bending",
+		"sylph:extreme_velocity",
+		"sylph:buoyant",
+		"origins:fragile",
+		"origins:light_armor",
+		"origins:no_shield",
+		"origins:fall_immunity",
+		"origins:sprint_jump",
+		"origins:weak_arms",
+		"sylph:weakling",
+		"sylph:wind_tactics",
+		"sylph:sylphid_dance"
+	],
+	"icon": {
+		"item": "minecraft:air"
+	},
+	"impact": 2,
+	"name": "Sylph",
+	"description": "An invisible spirit of the air element. These elementals are as swift as the wind."
+}
