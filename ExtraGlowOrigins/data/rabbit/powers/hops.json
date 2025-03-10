@@ -1,0 +1,22 @@
+{
+
+  "type": "origins:multiple",
+
+  "base": {
+    "type": "origins:modify_air_speed",
+    "modifier": {
+      "value": 0.2,
+      "operation": "multiply_base"
+    }
+  },
+
+  "modify": {
+    "type": "origins:attribute_modify_transfer",
+    "class": "modify_air_speed",
+    "attribute": "minecraft:generic.movement_speed",
+    "multiplier": 1.2
+  },
+  "name": "Hops",
+  "description": "You have a little extra air speed and modifiers that affect your speed are more effective for your air speed."
+
+}

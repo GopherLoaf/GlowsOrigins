@@ -1,0 +1,14 @@
+{
+  "type": "origins:modify_damage_taken",
+  "damage_condition": {
+    "type": "origins:type",
+    "damage_type": "minecraft:fall"
+  },
+  "modifier": {
+    "name": "Safe fall height increase",
+    "operation": "add_base_early",
+    "value": -3
+  },
+  "name": "Padded Feet",
+  "description": "You can fall from a slightly greater height, without injury, than a human can."
+}
