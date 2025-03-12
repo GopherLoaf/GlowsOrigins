@@ -1,8 +1,6 @@
 {
 	"replace": false,
 	"origins": [
-		"rabbit:bunnyman",
-		"dwarf:dwarf",
 		"fairy:faerie"
 	]
 }

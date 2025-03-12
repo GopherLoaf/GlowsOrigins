@@ -1,0 +1,24 @@
+{
+	"powers": [
+		"fairy:flight",
+		"origins:claustrophobia",
+		"origins:light_armor",
+		"origins:fragile",
+		"extraorigins:bite_sized",
+		"origins:weak_arms",
+		"fairy:weakling",
+		"origins:no_shield",
+		"extraorigins:nimble",
+		"origins:light_armor",
+		"extraorigins:small_appetite",
+		"origins:vegetarian",
+		"origins:climbing",
+		"extraorigins:jockey",
+		"origins:cat_vision"
+	],
+	"icon": "minecraft:brown_mushroom",
+	"order": 1,
+	"impact": 3,
+	"name": "Faerie",
+	"description": "A subspecies of inchlings that can fly. They utilize their flight to flee from enemies and navigate dangerous environments."
+}
