@@ -1,0 +1,14 @@
+{
+  "type": "origins:inventory",
+  "container_type": "hopper",
+  "drop_on_death": true,
+  "drop_on_death_filter": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "tag": "minecraft:tools"
+    },
+    "inverted": true
+  },
+  "name": "Tool Belt",
+  "description": "You carry a special tool belt that persists after death. Any item can be put in it but only tools won't drop on death."
+}

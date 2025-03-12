@@ -4,11 +4,20 @@
 
   "amplifier": {
     "type": "origins:modify_status_effect_amplifier",
-    "status_effect": "minecraft:poison",
-    "modifier": {
-      "operation": "add_base_early",
-      "value": -1
-    }
+    "status_effects": [
+      "minecraft:poison",
+      "minecraft:nausea"
+    ],
+    "modifiers": [
+      {
+        "operation": "add_base_early",
+        "value": -1
+      },
+      {
+        "operation": "min_total",
+        "value": 0
+      }
+    ]
   },
 
   "duration": {
@@ -19,7 +28,7 @@
     ],
     "modifier": {
       "operation": "multiply_base_multiplicative",
-      "value": -0.5
+      "value": -0.75
     }
   },
   "name": "Intoxication Tolerance",

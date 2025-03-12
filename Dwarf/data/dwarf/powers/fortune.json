@@ -1,0 +1,10 @@
+{
+  "type": "origins:modify_enchantment_level",
+  "enchantment": "minecraft:fortune",
+  "modifier": {
+    "operation": "add_base_late",
+    "value": 1
+  },
+  "name": "Fortune",
+  "description": "You get an extra level of fortune on anything you mine."
+}

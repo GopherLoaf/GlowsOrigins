@@ -1,0 +1,21 @@
+{
+	"powers": [
+		"dwarf:miner",
+		"dwarf:miner_size",
+		"dwarf:tool_belt",
+		"dwarf:swift_sneak",
+		"origins:cat_vision",
+		"dwarf:drag",
+		"dwarf:fortune",
+		"dwarf:fresh_earth",
+		"dwarf:poison_resistance",
+		"dwarf:agoraphobia",
+		"origins:more_exhaustion"
+	],
+	"icon": {
+		"item": "minecraft:netherite_pickaxe"
+	},
+	"impact": 1,
+	"name": "Dwarf",
+	"description": "Natural born miners built for excavating tunnels. These short statured creatures yearn for the mines."
+}

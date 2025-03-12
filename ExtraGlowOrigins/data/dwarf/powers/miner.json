@@ -1,0 +1,29 @@
+{
+  "type": "origins:multiple",
+  "efficiency": {
+    "type": "origins:modify_enchantment_level",
+    "enchantment": "minecraft:efficiency",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "minecraft:pickaxes"
+      }
+    },
+    "modifier": {
+      "operation": "add_base_late",
+      "value": 3
+    }
+  },
+  "unbreaking": {
+    "type": "extraorigins:innate_unbreaking",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "minecraft:pickaxes"
+      }
+    },
+    "level": 3
+  },
+  "name": "Expert Miner",
+  "description": "You're really good with a pickaxe. Like REALLY good. You get an extra efficiency III and unbreaking III enchantment when using a pickaxe."
+}

@@ -1,0 +1,12 @@
+{
+  "type": "origins:multiple",
+  "modify_size": {
+    "type": "extraorigins:modify_size",
+    "scale_types": [
+      "extraorigins:modify_size"
+    ],
+    "scale": 0.65
+  },
+  "name": "Miner Sized",
+  "description": "You are short enough to fit in one block tall tunnels when you crouch."
+}
