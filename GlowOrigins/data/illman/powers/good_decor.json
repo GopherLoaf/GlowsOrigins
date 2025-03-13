@@ -165,7 +165,7 @@
               "show_icon": true
             },
             {
-              "effect": "minecraft:absorption",
+              "effect": "minecraft:health_boost",
               "duration": 12000,
               "is_ambient": false,
               "show_particles": false,
