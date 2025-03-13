@@ -1,0 +1,102 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:passenger_action",
+        "action": {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:absorption",
+              "duration": 2400,
+              "amplifier": 3,
+              "is_ambient": true
+            },
+            {
+              "effect": "minecraft:regeneration",
+              "duration": 400,
+              "amplifier": 1,
+              "is_ambient": true
+            },
+            {
+              "effect": "minecraft:fire_resistance",
+              "duration": 6000,
+              "is_ambient": true
+            },
+            {
+              "effect": "minecraft:resistance",
+              "duration": 6000,
+              "is_ambient": true
+            }
+          ]
+        }
+      },
+      {
+        "type": "origins:riding_action",
+        "action": {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:absorption",
+              "duration": 2400,
+              "amplifier": 3,
+              "is_ambient": true
+            },
+            {
+              "effect": "minecraft:regeneration",
+              "duration": 400,
+              "amplifier": 1,
+              "is_ambient": true
+            },
+            {
+              "effect": "minecraft:fire_resistance",
+              "duration": 6000,
+              "is_ambient": true
+            },
+            {
+              "effect": "minecraft:resistance",
+              "duration": 6000,
+              "is_ambient": true
+            }
+          ]
+        }
+      },
+      {
+        "type": "origins:apply_effect",
+        "effects": [
+          {
+            "effect": "minecraft:absorption",
+            "duration": 2400,
+            "is_ambient": true
+          },
+          {
+            "effect": "minecraft:regeneration",
+            "duration": 100,
+            "amplifier": 1,
+            "is_ambient": true
+          }
+        ]
+      }
+    ]
+  },
+  "condition": {
+    "type": "origins:or",
+    "conditions": [
+      {
+        "type": "origins:passenger"
+      },
+      {
+        "type": "origins:riding"
+      }
+    ]
+  },
+  "cooldown": 1200,
+  "hud_render": {
+    "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+    "bar_index": 4
+  },
+  "name": "Chiron's Blessing",
+  "description": "You have the ability to bless you, your mount, and any passengers with buffs. You can only do this if you are riding or being ridden."
+}

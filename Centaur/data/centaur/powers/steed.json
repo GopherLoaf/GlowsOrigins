@@ -1,0 +1,27 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+    "distance": 8,
+    "type": "origins:raycast",
+    "shape_type": "collider",
+    "fluid_handling": "none",
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:entity_type",
+        "entity_type": "minecraft:player"
+      }
+    },
+    "bientity_action": {
+      "type": "origins:invert",
+      "action": {
+        "type": "origins:mount"
+      }
+    }
+  },
+  "key": {
+    "key": "key.origins.secondary_active"
+  },
+  "name": "Steed",
+  "description": "You can make other players ride you."
+}

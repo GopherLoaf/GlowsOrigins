@@ -1,0 +1,10 @@
+{
+  "type": "origins:starting_equipment",
+  "stacks": [
+    {
+      "item": "minecraft:saddle"
+    }
+  ],
+  "name": "Saddle Up",
+  "description": "You start with a free saddle."
+}
