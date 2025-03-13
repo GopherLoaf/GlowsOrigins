@@ -1,0 +1,68 @@
+{
+  "type": "origins:multiple",
+  "modify_size": {
+    "type": "extraorigins:modify_size",
+    "scale_types": [
+      "extraorigins:modify_size"
+    ],
+    "scale": 4
+  },
+  "modify_hitbox_width": {
+    "type": "extraorigins:modify_size",
+    "scale_types": [
+      "pehkui:hitbox_width"
+    ],
+    "scale": 0.5
+  },
+  "attribute_modifiers": {
+    "type": "origins:attribute",
+    "modifiers": [
+      {
+        "name": "Origin modifier",
+        "attribute": "minecraft:generic.max_health",
+        "operation": "multiply_total",
+        "value": 1
+      },
+      {
+        "name": "Origin modifier",
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "addition",
+        "value": 0.15
+      },
+      {
+        "name": "Origin modifier",
+        "attribute": "reach-entity-attributes:attack_range",
+        "operation": "addition",
+        "value": 2.5
+      },
+      {
+        "name": "Origin modifier",
+        "attribute": "reach-entity-attributes:reach",
+        "operation": "addition",
+        "value": 15
+      }
+    ]
+  },
+  "jump_modifier": {
+    "type": "origins:modify_jump",
+    "modifier": {
+      "name": "Origin modifier",
+      "operation": "multiply_total",
+      "value": 0.5
+    }
+  },
+  "fall_height_increase": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:type",
+      "damage_type": "minecraft:fall"
+    },
+    "modifier": {
+      "name": "Safe fall height increase",
+      "operation": "add_base_early",
+      "value": -3
+    }
+  },
+  "name": "Colossal",
+  "description": "You are significantly larger than a human and have twice as much health."
+}

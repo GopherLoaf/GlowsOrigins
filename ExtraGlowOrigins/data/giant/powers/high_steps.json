@@ -1,0 +1,23 @@
+{
+  "type": "origins:multiple",
+  "toggle": {
+    "type": "origins:toggle",
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": false
+    }
+  },
+  "stepping": {
+    "type": "extraorigins:modify_size",
+    "scale_types": [
+      "pehkui:step_height"
+    ],
+    "scale": 2,
+    "condition": {
+      "type": "origins:power_active",
+      "power": "giant:*_toggle"
+    }
+  },
+  "name": "High Steps",
+  "description": "You are able to step up blocks, not just half-blocks."
+}

@@ -1,0 +1,45 @@
+
+{
+  "type": "origins:multiple",
+  "damage_weakness": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "fall"
+        },
+        {
+          "type": "origins:name",
+          "name": "flyIntoWall"
+        },
+        {
+          "type": "origins:name",
+          "name": "cactus"
+        },
+        {
+          "type": "origins:name",
+          "name": "sweetBerryBush"
+        },
+        {
+          "type": "origins:name",
+          "name": "thorns"
+        }
+      ]
+    },
+    "modifier": {
+      "name": "Weak to velocity damage",
+      "operation": "multiply_total",
+      "value": 1
+    }
+  },
+  "prevent_block_slowness": {
+    "type": "extraorigins:prevent_block_slowness"
+  },
+  "ignore_water": {
+    "type": "origins:ignore_water"
+  },
+  "name": "Clumsy",
+  "description": "You are weak to thorns and velocity based damage. You are not slowed by blocks such as sweet berry bushes or cobwebs. You ignore water."
+}

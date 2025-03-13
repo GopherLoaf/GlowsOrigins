@@ -3,6 +3,7 @@
 	"origins": [
 		"rabbit:bunnyman",
 		"dwarf:dwarf",
-		"fairy:faerie"
+		"fairy:faerie",
+		"giant:giant"
 	]
 }
