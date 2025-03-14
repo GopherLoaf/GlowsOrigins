@@ -1,0 +1,8 @@
+{
+  "type": "origins:effect_immunity",
+  "effects": [
+    "minecraft:hunger"
+  ],
+  "name": "Strong Immune System",
+  "description": "Your body has a strong immune system. You're immune to the hunger effect."
+}
