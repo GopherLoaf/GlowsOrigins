@@ -1,0 +1,14 @@
+{
+  "type": "origins:modify_velocity",
+  "modifier": {
+    "value": 0.5,
+    "operation": "multiply_total"
+  },
+  "axes": [
+    "x",
+    "y",
+    "z"
+  ],
+  "name": "Impressionable",
+  "description": "All velocities you experience are increased by 50%."
+}

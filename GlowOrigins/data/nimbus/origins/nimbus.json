@@ -1,0 +1,28 @@
+{
+	"powers": [
+		"nimbus:air_swimmer",
+		"origins:slow_falling",
+		"origins:fresh_air",
+		"origins:like_air",
+		"nimbus:cloud_model",
+		"nimbus:extreme_claustrophobia",
+		"nimbus:air_bending",
+		"nimbus:extreme_velocity",
+		"nimbus:cripple",
+		"nimbus:flailer",
+		"nimbus:buoyant",
+		"origins:fragile",
+		"origins:light_armor",
+		"origins:no_shield",
+		"origins:fall_immunity",
+		"nimbus:less_exhaustion",
+		"origins:weak_arms",
+		"nimbus:weakling"
+	],
+	"icon": {
+		"item": "minecraft:white_wool"
+	},
+	"impact": 2,
+	"name": "Nimbus",
+	"description": "A peculiar cousin of the Sylph. These cloud-like air elementals prefer a much more leisurely way of life."
+}

@@ -1,0 +1,77 @@
+{
+
+  "type": "origins:multiple",
+
+  "resource": {
+    "type": "origins:cooldown",
+    "cooldown": 160,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+      "should_render": true,
+      "bar_index": 8
+    }
+  },
+
+  "bending": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:raycast",
+          "block": true,
+          "entity": true,
+          "shape_type": "outline",
+          "fluid_handling": "any",
+          "distance": 16,
+          "bientity_action": {
+            "type": "origins:add_velocity",
+            "z": 2
+          },
+          "command_along_ray": "particle minecraft:cloud"
+        },
+        {
+          "type": "origins:add_velocity",
+          "z": -1,
+          "space": "local"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:item.armor.equip_elytra"
+        },
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:resource",
+            "resource": "nimbus:air_bending_resource",
+            "comparison": "<=",
+            "compare_to": 0
+          },
+          "if_action": {
+            "type": "origins:change_resource",
+            "resource": "nimbus:air_bending_resource",
+            "change": 160,
+            "operation": "set"
+          }
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "nimbus:air_bending_resource",
+          "change": 80
+        }
+      ]
+    },
+    "key": {
+      "key": "key.origins.secondary_active"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "nimbus:air_bending_resource",
+      "comparison": "<=",
+      "compare_to": 80
+    }
+  },
+  "name": "Air Bending",
+  "description": "You can manipulate air to push your foes. This air push will also push yourself in the opposite direction."
+
+}
