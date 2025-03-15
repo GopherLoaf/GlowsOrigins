@@ -1,8 +1,11 @@
 Current Origins:
 - Xolotl
+- Cave Dweller
+- Centaur?
 - Ghost
 - Illman
 - Imp
+- Nimbus
 - Ninji
 - Sylph
 
