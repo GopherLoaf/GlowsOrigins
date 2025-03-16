@@ -1,0 +1,9 @@
+{
+  "type": "extraorigins:mob_neutrality",
+  "entity_condition": {
+    "type": "origins:entity_type",
+    "entity_type": "minecraft:hoglin"
+  },
+  "name": "Hoglin Neutrality",
+  "description": "Hoglins do not attack you unless provoked."
+}

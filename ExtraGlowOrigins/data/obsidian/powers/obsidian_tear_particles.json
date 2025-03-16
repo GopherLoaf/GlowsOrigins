@@ -1,0 +1,11 @@
+{
+  "type": "origins:particle",
+  "particle": "minecraft:falling_obsidian_tear",
+  "frequency": 4,
+  "condition": {
+    "type": "origins:relative_health",
+    "comparison": "<",
+    "compare_to": 0.5
+  },
+  "hidden": true
+}

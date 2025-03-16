@@ -1,0 +1,5 @@
+{
+  "type": "extraorigins:prevent_block_slowness",
+  "name": "Powerful Strides",
+  "description": "Walking through blocks does not slow you down."
+}

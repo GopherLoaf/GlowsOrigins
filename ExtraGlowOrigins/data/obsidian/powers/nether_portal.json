@@ -1,0 +1,236 @@
+{
+  "type": "origins:multiple",
+  "portal": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                  "type": "origins:ingredient",
+                  "ingredient": {
+                    "tag": "minecraft:creeper_igniters"
+                  }
+                }
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_boolean",
+                "comparison": "==",
+                "compare_to": 0
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_boolean",
+                "change": 1
+              },
+              {
+                "type": "origins:equipped_item_action",
+                "equipment_slot": "mainhand",
+                "action": {
+                  "type": "origins:if_else",
+                  "condition": {
+                    "type": "origins:is_damageable"
+                  },
+                  "if_action": {
+                    "type": "origins:damage",
+                    "amount": 1
+                  },
+                  "else_action": {
+                    "type": "origins:consume",
+                    "amount": 1
+                  }
+                }
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.portal.ambient"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:*_boolean",
+                "comparison": ">",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:or",
+                "conditions": [
+                  {
+                    "type": "origins:dimension",
+                    "dimension": "minecraft:overworld"
+                  },
+                  {
+                    "type": "origins:dimension",
+                    "dimension": "minecraft:the_nether"
+                  }
+                ]
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_toggle",
+                "change": 1
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.portal.trigger"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 80,
+    "start_value": 80,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 7,
+      "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_boolean",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    },
+    "min_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:if_else_list",
+          "actions": [
+            {
+              "condition": {
+                "type": "origins:dimension",
+                "dimension": "minecraft:overworld"
+              },
+              "action": {
+                "type": "origins:execute_command",
+                "command": "execute in minecraft:the_nether run tp ~ ~ ~"
+              }
+            },
+            {
+              "condition": {
+                "type": "origins:dimension",
+                "dimension": "minecraft:the_nether"
+              },
+              "action": {
+                "type": "origins:execute_command",
+                "command": "execute in minecraft:overworld run tp ~ ~ ~"
+              }
+            }
+          ]
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.portal.travel"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_toggle",
+          "change": -1
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_resource",
+          "change": 80,
+          "operation": "set"
+        }
+      ]
+    }
+  },
+  "toggle": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1
+  },
+  "over_time": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_resource",
+      "change": -1
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_toggle",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  },
+  "boolean": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1
+  },
+  "portal_cancel": {
+    "type": "origins:action_when_damage_taken",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.glass.break"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_toggle",
+          "change": 0,
+          "operation": "set"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_boolean",
+          "change": 0,
+          "operation": "set"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_resource",
+          "change": 80,
+          "operation": "set"
+        }
+      ]
+    },
+    "damage_condition": {
+      "type": "origins:amount",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_boolean",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "cooldown": 1
+  },
+  "name": "Inner Portal",
+  "description": "Activating this ability with a lighter in hand ignites an inner nether portal. When this portal is active, you can use this ability to travel to and from the nether."
+}

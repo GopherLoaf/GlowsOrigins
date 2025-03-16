@@ -583,7 +583,7 @@
                                               {
                                                 "type": "origins:damage",
                                                 "amount": 127,
-                                                "damage_type": "minecraft:indirect_magic"
+                                                "damage_type": "minecraft:magic"
                                               }
                                             ]
                                           }

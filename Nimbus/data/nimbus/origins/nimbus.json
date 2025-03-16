@@ -16,7 +16,8 @@
 		"origins:no_shield",
 		"origins:fall_immunity",
 		"origins:weak_arms",
-		"nimbus:weakling"
+		"nimbus:weakling",
+		"nimbus:cloud_particles"
 	],
 	"icon": {
 		"item": "minecraft:white_wool"

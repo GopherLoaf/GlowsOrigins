@@ -1,0 +1,15 @@
+{
+  "type": "origins:modify_damage_taken",
+  "damage_condition": {
+    "type": "origins:in_tag",
+    "tag": "minecraft:bypasses_enchantments",
+    "inverted": true
+  },
+  "modifier": {
+    "name": "Thick skinned damage protection",
+    "operation": "add_base_late",
+    "value": -1
+  },
+  "name": "Thick Skinned",
+  "description": "You take one less damage from sources that do not penetrate enchantments."
+}

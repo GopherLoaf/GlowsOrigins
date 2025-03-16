@@ -1,0 +1,9 @@
+{
+  "type": "origins:prevent_elytra_flight",
+  "entity_action": {
+    "type": "origins:execute_command",
+    "command": "tellraw @s {\"text\": \"You cannot glide!\", \"color\": \"red\"}"
+  },
+  "name": "Wingless",
+  "description": "You cannot enter elytra flight."
+}

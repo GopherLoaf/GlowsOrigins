@@ -1,0 +1,9 @@
+{
+  "type": "origins:invulnerability",
+  "damage_condition": {
+    "type": "origins:in_tag",
+    "tag": "minecraft:is_explosion"
+  },
+  "name": "Explosion Immunity",
+  "description": "You are immune to all types of explosion damage."
+}
