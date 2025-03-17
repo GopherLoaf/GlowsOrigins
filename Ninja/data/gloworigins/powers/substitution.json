@@ -1,0 +1,156 @@
+{
+
+  "type": "origins:multiple",
+
+  "resource": {
+    "type": "origins:cooldown",
+    "cooldown": 100,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "should_render": true,
+      "bar_index": 11
+    }
+  },
+
+  "teleport": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "name": "Substitution dodge",
+      "operation": "multiply_total",
+      "value": -1
+    },
+    "self_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:block_action_at",
+          "block_action": {
+            "type": "origins:offset",
+            "action": {
+              "type": "origins:spawn_entity",
+              "entity_type": "minecraft:falling_block",
+              "tag": "{BlockState:{Name:cherry_log}}"
+            },
+            "y": 1
+          }
+        },
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:cherry_log"
+              }
+            }
+          },
+          "if_action": {
+            "type": "origins:equipped_item_action",
+            "equipment_slot": "mainhand",
+            "action": {
+              "type": "origins:consume",
+              "amount": 1
+            }
+          },
+          "else_action": {
+            "type": "origins:equipped_item_action",
+            "equipment_slot": "offhand",
+            "action": {
+              "type": "origins:consume",
+              "amount": 1
+            }
+          }
+        },
+        {
+          "type": "origins:spawn_particles",
+          "particle": "minecraft:poof",
+          "count": 8
+        },
+        {
+          "type": "origins:random_teleport",
+          "area_width": 8,
+          "area_height": 8,
+          "fail_action": {
+            "type": "origins:execute_command",
+            "command": "title @s actionbar {\"text\": \"Cannot teleport!\", \"color\": \"red\"}"
+          }
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "*:*_resource"
+        }
+      ]
+    },
+    "damage_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:in_tag",
+          "tag": "minecraft:bypasses_invulnerability",
+          "inverted": true
+        },
+        {
+          "type": "origins:amount",
+          "comparison": ">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:and",
+          "inverted": true,
+          "conditions": [
+            {
+              "type": "origins:type",
+              "damage_type": "minecraft:fall"
+            },
+            {
+              "type": "origins:amount",
+              "comparison": "<=",
+              "compare_to": 9
+            }
+          ]
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "mainhand",
+              "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:cherry_log"
+                }
+              }
+            },
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "offhand",
+              "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:cherry_log"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_resource",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "name": "Body Replacement Technique",
+  "description": "The ultimate technique Ninji learn at the end of their training. Holding a cherry log in either hand when hurt allows you to teleport a small distance and nullify the damage completely."
+
+}

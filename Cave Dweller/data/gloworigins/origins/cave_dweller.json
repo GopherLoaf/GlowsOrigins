@@ -1,0 +1,21 @@
+{
+	"powers": [
+		"gloworigins:crawling",
+		"origins:climbing",
+		"origins:cat_vision",
+		"gloworigins:swift_sneak",
+		"origins:tailwind",
+		"gloworigins:fresh_earth",
+		"gloworigins:agoraphobia",
+		"origins:carnivore",
+		"gloworigins:immune_system",
+		"origins:extra_reach",
+		"gloworigins:flailer"
+	],
+	"icon": {
+		"item": "minecraft:deepslate"
+	},
+	"impact": 1,
+	"name": "Cave Dweller",
+	"description": "Unusual creatures that live deep in the ground. Their ability to crawl and climb give them an advantage in the caves."
+}

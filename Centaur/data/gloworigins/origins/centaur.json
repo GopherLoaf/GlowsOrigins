@@ -1,0 +1,17 @@
+{
+	"powers": [
+		"gloworigins:saddle",
+		"gloworigins:archer",
+		"gloworigins:cripple",
+		"origins:extra_reach",
+		"origins:claustrophobia",
+		"gloworigins:steed",
+		"gloworigins:chiron_blessing"
+	],
+	"icon": {
+		"item": "minecraft:saddle"
+	},
+	"impact": 2,
+	"name": "Centaur?",
+	"description": "Self-proclaimed Centaurs."
+}

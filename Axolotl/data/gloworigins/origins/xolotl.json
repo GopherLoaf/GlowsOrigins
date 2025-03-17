@@ -1,0 +1,21 @@
+{
+	"powers": [
+		"origins:water_breathing",
+		"gloworigins:play_dead",
+		"gloworigins:hydration",
+		"origins:aqua_affinity",
+		"gloworigins:webbed_feet",
+		"origins:like_water",
+		"origins:fragile",
+		"origins:weak_arms",
+		"origins:aquatic",
+		"origins:conduit_power_on_land",
+		"gloworigins:xolotl_protection"
+	],
+	"icon": {
+		"item": "minecraft:axolotl_bucket"
+	},
+	"impact": 2,
+	"name": "Xolotl",
+	"description": "A subspecies of Merling that share characteristics with axolotls. They're more used to land than regular Merlings but not as efficient in the water."
+}

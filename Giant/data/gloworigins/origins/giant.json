@@ -1,0 +1,14 @@
+{
+	"powers": [
+		"gloworigins:colossal",
+		"gloworigins:clumsy",
+		"origins:more_exhaustion",
+		"gloworigins:high_steps",
+		"gloworigins:steed"
+	],
+	"icon": "minecraft:scaffolding",
+	"order": 1,
+	"impact": 3,
+	"name": "Giant",
+	"description": "A subspecies of humans that are incredibly large. They utilize their size to intimidate their enemies and navigate large spaces."
+}

@@ -1,0 +1,31 @@
+{
+	"powers": [
+		"gloworigins:nether_portal",
+		"gloworigins:respawn_anchor",
+		"gloworigins:heavy_golem_body",
+		"gloworigins:drag",
+		"gloworigins:prevent_elytra_use",
+		"origins:natural_armor",
+		"origins:strong_arms",
+		"origins:strong_arms_break_speed",
+		"origins:no_shield",
+		"gloworigins:full_fire_immunity",
+		"gloworigins:explosion_immunity",
+		"gloworigins:thick_skinned",
+		"gloworigins:less_nourishment",
+		"origins:more_exhaustion",
+		"extraorigins:decomposition",
+		"gloworigins:prevent_block_slowness",
+		"gloworigins:hoglin_neutrality",
+		"gloworigins:minor_lava_vision",
+		"origins:ender_particles",
+		"gloworigins:obsidian_tear_particles",
+		"gloworigins:obsidian_skin"
+	],
+	"icon": {
+		"item": "minecraft:obsidian"
+	},
+	"impact": 2,
+	"name": "Obsidian Golem",
+	"description": "A unique golem created to resemble adventurers. The process to create them was lost yet the results remain."
+}

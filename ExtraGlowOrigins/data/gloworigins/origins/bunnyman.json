@@ -1,0 +1,22 @@
+{
+	"powers": [
+		"gloworigins:leap",
+		"gloworigins:hops",
+		"gloworigins:miner_size",
+		"origins:vegetarian",
+		"origins:fragile",
+		"gloworigins:padded_feet",
+		"gloworigins:walk_on_powder_snow",
+		"gloworigins:swift_sneak",
+		"origins:sprint_jump",
+		"gloworigins:rabbit_neutrality",
+		"gloworigins:lucky",
+		"gloworigins:carrot_plucker"
+	],
+	"icon": {
+		"item": "minecraft:rabbit_foot"
+	},
+	"impact": 1,
+	"name": "Bunnyman",
+	"description": "Some kind of deranged rabbit creature."
+}

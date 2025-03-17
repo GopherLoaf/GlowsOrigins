@@ -1,10 +1,10 @@
 {
 	"replace": false,
 	"origins": [
-		"rabbit:bunnyman",
-		"dwarf:dwarf",
-		"fairy:faerie",
-		"giant:giant",
-		"obsidian:obsidian_golem"
+		"gloworigins:bunnyman",
+		"gloworigins:dwarf",
+		"gloworigins:faerie",
+		"gloworigins:giant",
+		"gloworigins:obsidian_golem"
 	]
 }

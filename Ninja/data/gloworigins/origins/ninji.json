@@ -1,0 +1,26 @@
+{
+	"powers": [
+		"gloworigins:swift_sneak",
+		"gloworigins:stealth_sneak",
+		"origins:like_air",
+		"origins:tailwind",
+		"origins:fragile",
+		"origins:climbing",
+		"gloworigins:walk_on_water",
+		"origins:light_armor",
+		"gloworigins:back_stab",
+		"origins:no_shield",
+		"gloworigins:safe_fall",
+		"origins:sprint_jump",
+		"gloworigins:velvet_body",
+		"gloworigins:poison_resistance",
+		"origins:cat_vision",
+		"gloworigins:substitution"
+	],
+	"icon": {
+		"item": "minecraft:cherry_log"
+	},
+	"impact": 1,
+	"name": "Ninji",
+	"description": "These sneaky devils take the form of humans and thrive among the shadows."
+}

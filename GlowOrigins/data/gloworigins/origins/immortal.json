@@ -1,0 +1,17 @@
+{
+	"powers": [
+		"gloworigins:immortality",
+		"gloworigins:immunity",
+		"gloworigins:injury_regeneration",
+		"gloworigins:keep_inventory",
+		"gloworigins:self_sustaining",
+		"gloworigins:void_rejection"
+	],
+	"icon": {
+		"item": "minecraft:totem_of_undying"
+	},
+	"impact": 1,
+	"name": "Immortal",
+	"description": "An Immortal",
+	"unchoosable": true
+}
