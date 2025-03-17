@@ -1,4 +1,4 @@
-Current Origins:
+Default Origins:
 - Xolotl
 - Cave Dweller
 - Centaur?
@@ -9,16 +9,19 @@ Current Origins:
 - Ninji
 - Sylph
 
-Current Unchoosable Origins:
+Unchoosable Origins:
 - Immortal
 - Perfectus
 - Sliced
 
-Current Extra Origins:
+Extra Origins Compatibility:
+- Obsidian Golem
+
+Extra Origins Dependant:
 - Dwarf
 - Faerie
 - Giant
 - Bunnyman
 
-Current Unused Origins:
+Unused Origins:
 - Monachos
