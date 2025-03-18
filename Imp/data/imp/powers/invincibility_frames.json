@@ -25,16 +25,117 @@
           "sound": "minecraft:entity.player.teleport"
         },
         {
-          "type": "origins:raycast",
-          "distance": 40,
-          "block": true,
-          "entity": false,
-          "fluid_handling": "none",
-          "shape_type": "collider",
-          "command_at_hit": "teleport @s ~ ~ ~",
-          "miss_action": {
-            "type": "origins:execute_command",
-            "command": "teleport @s ^ ^ ^40"
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:or",
+                "conditions": [
+                  {
+                    "type": "origins:command",
+                    "command": "execute if score @s gloworigins.soul_hop_x matches 0",
+                    "comparison": "==",
+                    "compare_to": 0
+                  },
+                  {
+                    "type": "origins:command",
+                    "command": "execute if score @s gloworigins.soul_hop_y matches 0",
+                    "comparison": "==",
+                    "compare_to": 0
+                  },
+                  {
+                    "type": "origins:command",
+                    "command": "execute if score @s gloworigins.soul_hop_z matches 0",
+                    "comparison": "==",
+                    "compare_to": 0
+                  }
+                ]
+              },
+              {
+                "type": "origins:resource",
+                "resource": "imp:souls",
+                "comparison": ">",
+                "compare_to": 19
+              }
+            ]
+          },
+          "if_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "execute store result score @s gloworigins.teleport_x run data get entity @s Pos[0]"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "execute store result score @s gloworigins.teleport_y run data get entity @s Pos[1]"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "execute store result score @s gloworigins.teleport_z run data get entity @s Pos[2]"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scoreboard players operation @s gloworigins.teleport_x += @s gloworigins.soul_hop_x"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scoreboard players operation @s gloworigins.teleport_y += @s gloworigins.soul_hop_y"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scoreboard players operation @s gloworigins.teleport_z += @s gloworigins.soul_hop_z"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "tag @s add gloworigins.teleporter"
+              },
+              {
+                "type": "origins:spawn_entity",
+                "entity_type": "minecraft:area_effect_cloud",
+                "tag": "{Tags: [\"gloworigins.teleport_location\"]}"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "execute as @e[type = minecraft:area_effect_cloud, tag = gloworigins.teleport_location, limit = 1, sort = nearest] run function imp:stored_teleport"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "tag @s remove gloworigins.teleporter"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scoreboard players set @s gloworigins.soul_hop_x 0"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scoreboard players set @s gloworigins.soul_hop_y 0"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scoreboard players set @s gloworigins.soul_hop_z 0"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "imp:souls",
+                "change": 0,
+                "operation": "set"
+              }
+            ]
+          },
+          "else_action": {
+            "type": "origins:raycast",
+            "distance": 40,
+            "block": true,
+            "entity": false,
+            "fluid_handling": "none",
+            "shape_type": "collider",
+            "command_at_hit": "teleport @s ~ ~ ~",
+            "miss_action": {
+              "type": "origins:execute_command",
+              "command": "teleport @s ^ ^ ^40"
+            }
           }
         }
       ]
@@ -139,6 +240,51 @@
       "resource": "imp:invincibility_frames_resource",
       "comparison": ">",
       "compare_to": 0
+    }
+  },
+
+  "callback": {
+    "type": "origins:action_on_callback",
+    "entity_action_gained": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard objectives add gloworigins.teleport_x dummy"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard objectives add gloworigins.teleport_y dummy"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard objectives add gloworigins.teleport_z dummy"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard objectives add gloworigins.soul_hop_x dummy"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard objectives add gloworigins.soul_hop_y dummy"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard objectives add gloworigins.soul_hop_z dummy"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players set @s gloworigins.soul_hop_x 0"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players set @s gloworigins.soul_hop_y 0"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players set @s gloworigins.soul_hop_z 0"
+        }
+      ]
     }
   },
 

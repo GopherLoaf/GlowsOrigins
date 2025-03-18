@@ -1,40 +1,201 @@
 {
   "type": "origins:active_self",
   "entity_action": {
-    "type": "origins:and",
+    "type": "origins:if_else_list",
     "actions": [
       {
-        "type": "origins:change_resource",
-        "resource": "imp:invincibility_frames_resource",
-        "change": 10
+        "condition": {
+          "type": "origins:sneaking"
+        },
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:if_else_list",
+              "actions": [
+                {
+                  "condition": {
+                    "type": "origins:command",
+                    "command": "execute if entity @s[x_rotation=-90..-45]",
+                    "comparison": "==",
+                    "compare_to": 1
+                  },
+                  "action": {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players add @s gloworigins.soul_hop_y 20"
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "origins:command",
+                    "command": "execute if entity @s[x_rotation=45..90]",
+                    "comparison": "==",
+                    "compare_to": 1
+                  },
+                  "action": {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players remove @s gloworigins.soul_hop_y 20"
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "origins:command",
+                    "command": "execute if entity @s[y_rotation=135..-135]",
+                    "comparison": "==",
+                    "compare_to": 1
+                  },
+                  "action": {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players remove @s gloworigins.soul_hop_z 20"
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "origins:command",
+                    "command": "execute if entity @s[y_rotation=-135..-45]",
+                    "comparison": "==",
+                    "compare_to": 1
+                  },
+                  "action": {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players add @s gloworigins.soul_hop_x 20"
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "origins:command",
+                    "command": "execute if entity @s[y_rotation=-45..45]",
+                    "comparison": "==",
+                    "compare_to": 1
+                  },
+                  "action": {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players add @s gloworigins.soul_hop_z 20"
+                  }
+                },
+                {
+                  "condition": {
+                    "type": "origins:command",
+                    "command": "execute if entity @s[y_rotation=45..135]",
+                    "comparison": "==",
+                    "compare_to": 1
+                  },
+                  "action": {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players remove @s gloworigins.soul_hop_x 20"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "origins:execute_command",
+              "command": "title @s actionbar [{\"text\": \"x = \"}, {\"score\":{\"name\":\"@s\",\"objective\":\"gloworigins.soul_hop_x\"}}, {\"text\": \", y = \"}, {\"score\":{\"name\":\"@s\",\"objective\":\"gloworigins.soul_hop_y\"}}, {\"text\": \", z = \"}, {\"score\":{\"name\":\"@s\",\"objective\":\"gloworigins.soul_hop_z\"}}]"
+            }
+          ]
+        }
       },
       {
-        "type": "origins:if_else",
         "condition": {
-          "type": "origins:resource",
-          "resource": "imp:soul_echo",
-          "comparison": ">",
-          "compare_to": 0
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:or",
+              "conditions": [
+                {
+                  "type": "origins:command",
+                  "command": "execute if score @s gloworigins.soul_hop_x matches 0",
+                  "comparison": "==",
+                  "compare_to": 0
+                },
+                {
+                  "type": "origins:command",
+                  "command": "execute if score @s gloworigins.soul_hop_y matches 0",
+                  "comparison": "==",
+                  "compare_to": 0
+                },
+                {
+                  "type": "origins:command",
+                  "command": "execute if score @s gloworigins.soul_hop_z matches 0",
+                  "comparison": "==",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:resource",
+              "resource": "imp:souls",
+              "comparison": ">",
+              "compare_to": 19
+            }
+          ]
         },
-        "if_action": {
-          "type": "origins:change_resource",
-          "resource": "imp:soul_echo",
-          "operation": "set",
-          "change": 140
-        },
-        "else_action": {
+        "action": {
           "type": "origins:and",
           "actions": [
             {
               "type": "origins:change_resource",
+              "resource": "imp:invincibility_frames_resource",
+              "change": 10
+            }
+          ]
+        }
+      },
+      {
+        "condition": {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:resource",
               "resource": "imp:souls",
-              "change": -1
+              "comparison": ">",
+              "compare_to": 0
             },
             {
-              "type": "origins:change_resource",
+              "type": "origins:resource",
               "resource": "imp:soul_echo",
-              "operation": "set",
-              "change": 20
+              "comparison": ">",
+              "compare_to": 0
+            }
+          ]
+        },
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:change_resource",
+              "resource": "imp:invincibility_frames_resource",
+              "change": 10
+            },
+            {
+              "type": "origins:if_else",
+              "condition": {
+                "type": "origins:resource",
+                "resource": "imp:soul_echo",
+                "comparison": ">",
+                "compare_to": 0
+              },
+              "if_action": {
+                "type": "origins:change_resource",
+                "resource": "imp:soul_echo",
+                "operation": "set",
+                "change": 140
+              },
+              "else_action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:change_resource",
+                    "resource": "imp:souls",
+                    "change": -1
+                  },
+                  {
+                    "type": "origins:change_resource",
+                    "resource": "imp:soul_echo",
+                    "operation": "set",
+                    "change": 20
+                  }
+                ]
+              }
             }
           ]
         }
@@ -45,32 +206,10 @@
     "key": "key.origins.secondary_active"
   },
   "condition": {
-    "type": "origins:and",
-    "conditions": [
-      {
-        "type": "origins:or",
-        "conditions": [
-          {
-            "type": "origins:resource",
-            "resource": "imp:souls",
-            "comparison": ">",
-            "compare_to": 0
-          },
-          {
-            "type": "origins:resource",
-            "resource": "imp:soul_echo",
-            "comparison": ">",
-            "compare_to": 0
-          }
-        ]
-      },
-      {
-        "type": "origins:resource",
-        "resource": "imp:invincibility_frames_resource",
-        "comparison": "==",
-        "compare_to": 0
-      }
-    ]
+    "type": "origins:resource",
+    "resource": "imp:invincibility_frames_resource",
+    "comparison": "==",
+    "compare_to": 0
   },
   "name": "Soul Hop",
   "description": "Can hop through time and space."
